@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    
+    <script src="calculadora.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/css.css">
+</head>
+<body>
+    <div class="content">
+        <div>
+            <h1 class = 'headerTitulo'>CALCULATOR</h1>
+        </div>
+        <div class = 'container header' id = 'header'>
+            
+        </div>
+        <div class = 'container'>
+            <div>
+                <input type='text' id='num1' class = 'element-header'>
+                <input type="submit" onclick="cliclFunction(event)" id = 'division' value="/" class = 'button element operation'>
+            </div>
+            <div>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but7' value="7" class = 'button element'>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but8' value="8" class = 'button element'>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but9' value="9" class = 'button element'>
+                <input type="submit" onclick="cliclFunction(event)"id = 'multiplicacion' value="*" class = 'button element operation'>
+            </div>
+            <div>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but4' value="4" class = 'button element'>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but5' value="5" class = 'button element'>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but6' value="6" class = 'button element'>
+                <input type="submit" onclick="cliclFunction(event)" id = 'resta' value="-" class = 'button element operation'>
+            </div>
+            <div>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but1' value="1" class = 'button element'>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but2' value="2" class = 'button element'>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but3' value="3" class = 'button element'>
+                <input type="submit" onclick="cliclFunction(event)" id = 'suma' value="+" class = 'button element operation'>
+            </div>
+            <div>
+                <input type="submit" onclick="clickCalcu(event)" id = 'but0' value="0" class = 'button element'>
+                <input type="submit" onclick="clickCalcu(event)" id = 'clear' value="AC" class = 'button element ac'>
+                <input type="submit" onclick="cliclFunction(event)" id = 'raiz' value="raiz" class = 'button element operation'>
+                <input type="submit" onclick="cliclFunction(event)" id = 'igual' value="=" class = 'button element operation'>
+            </div>
+            
+
+        </div>
+    </div>
+    
+
+    <!-- <input type="text" id= 'num1'> | Suma + | Resta - | Multiplicacion * | Division / |  
+    <input type="text" id= 'num2'>
+
+    <button id = 'button1' onClick = 'startCalculator()'> Start Calculator</button>
+
+    <h4>Utiliza  "Option" + "Cmmd" + "i" para visualizar el resultado</h4>
+    <h3>Consola Opctions</h4>
+    <hr>
+    <dl>
+        <dd><li>sum(num,num,num,etc)</li></dd>
+        <dd><li>resta(num,num,num,etc </li></dd>
+        <dd><li>multi(num,num,num,etc)</li></dd>
+        <dd><li>div(num,num,num,etc)</li></dd>
+    </dl> -->
+</body>
+</html>

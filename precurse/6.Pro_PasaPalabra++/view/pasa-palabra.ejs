@@ -1,0 +1,365 @@
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <script src= 'js/pasa-palabra.js'></script>
+    <link rel="stylesheet" type="text/css" href="style/pasa-palabra.css">
+    <title>PasaPalabra</title>
+</head>
+
+<body  id ='body'>
+    <!-- Loader Init PAGE -->
+    <div class="preloader-wrapper big active loaderHome" id = 'loaderHome'>
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div>
+            <div class="gap-patch">
+                <div class="circle"></div>
+            </div>
+            <div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
+    </div>
+      <!-- All HTML content -->
+    <div id='programa' style='display:none'>
+        <div class="col m12 l12 s12 center-align ">
+            <h1 class = 'titulo-pasa'>PASAPALABRA </h1>
+        </div>
+        <div class="row row-container">
+            <div class="col s6 m6 l6 container left-content z-depth-2">
+                <div class="circle-container col s8 m8 l8 offset-s2 offset-l2 offset-m2">
+                    <div class="title-container">
+                        <p class="title" id = 'letter'></p>
+                    </div>
+                    <ul class="circle" id ='ciculo'>
+                        
+                    </ul>
+                    <ul class="scoreboard">
+                        <li id="timer" class="timer" href="">150</li>
+                        <li id="puntos" class="score" href="">25</li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="col s6 m6 l6 ">
+                <div class="text-content  col s12 m12 l12  container rigth-content z-depth-2" >
+                    <!-- Welcome Template -->
+                    <div id = 'content-text'>
+                        <h4> Bienvenidos a pasapalabra</h4>
+                        <span>
+                                Para poder juegar a Pasapalabra, tienes que <span style= 'cursor: pointer;' class = 'modal-trigger' href="#modal1"><b>Registrarte</b></span>. <br>
+                                Completa 25 preguntas correctamente en un limite de 150 segundos!<br> 
+                                Al finalizar el roscon, podras insertar tus puntuacionen el Ranking Mundial!<br>
+
+                                Solo los mejores conseguiran estar en el puesto 1 !
+                                
+                        </span>
+                        <div class="button">
+                                <button class="btn waves-effect boton-juega waves-light boton-juega blue-boton"
+                                    type="submit"
+                                    tabindex="1"
+                                    id ='juega-button'
+                                    onclick="changeInput()">
+                                    Juega!
+                                </button>
+                        </div>
+                    </div> 
+                    <!--Login Template  -->
+                    <div id = 'login' style='display:none'>
+                        <div class="row" style="margin-bottom: 0;">
+                            <div id = 'input-user'class="input-field col s6">  
+                                <i class="material-icons prefix" id='icon-user-entrar'>account_circle</i>
+                                <input tabindex="2" id="insert-user" type="text" onkeypress="inputUser(event)" class="">
+                                <label for="icon_prefix" id ='label-user'>User Name</label>
+                            </div>
+                            <div id = 'register'class="input-field col s6">
+                                <button class="btn waves-effect waves-light modal-trigger  botonRespuesta registrarse-boton blue-boton col s8"
+                                    type="submit"
+                                    tabindex="5"
+                                    href="#modal1"
+                                    name="action">Sign Up
+                                    <i class="material-icons prefix register-icon">add_circle</i> 
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id = 'input-pass'class="input-field col s6">
+                                <i class="material-icons prefix" id='icon-pass-entrar'>https</i>    
+                                <input tabindex="3" id="insert-pass" onkeypress="inputUser(event)" type="password" class="">
+                                <label for="icon_prefix" id='label-pass'>User password</label>
+                            </div>
+                        </div>
+                        <div class="button">
+                                <button class="btn waves-effect waves-light boton-juega blue-boton"
+                                    type="submit"
+                                    id ='master-button'
+                                    onclick="loginUsuario()"
+                                    disabled
+                                    tabindex="4"
+                                    name="action">Log In
+                                    <i class="material-icons right">send</i>
+                                </button>
+                        </div>
+                    </div>
+                    <!-- Loader Template -->
+
+                    <div class="progress loader blue" id ='loader' style="display:none">
+                        <div class="indeterminate"></div>
+                    </div> 
+                    <!-- Game Template -->
+                    <div id = 'game' style='display:none'> 
+                        <div class="row" style="position:relative">
+                            <div class="fixed-action-btn horizontal contentButonUser">
+                                <a class="btn-floating waves-effect waves-light btn-large blue buttonUser">
+                                    <i class="large material-icons">mode_edit</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a  href="#modal-cerrarSesion"
+                                            data-position="left" 
+                                            data-delay="50" 
+                                            data-tooltip="Sing Out" 
+                                            class="btn-floating modal-trigger tooltipped waves-effect waves-light error ">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a  href="#modal-terminarPartida"
+                                            data-position="bottom" 
+                                            data-delay="50" 
+                                            data-tooltip="Restart pasapalabra"  
+                                            class="btn-floating waves-effect tooltipped waves-light modal-trigger blueC darken-1">
+                                            <i class="material-icons">rotate_right</i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span class="col s12 m12 l12 right-align" id='userName'></span>    
+                        </div>  
+                        <div class="row">
+                            <div class="col s12 m12 l12" style = 'min-height: 4em;'>
+                                <span id='pregunta'></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6 m6 l6">
+                                <div class="input-field">
+                                    <i class="material-icons prefix" style="margin-top: 0.6em;">format_color_text</i> 
+                                    <input id="respuesta" type="text" onkeypress="inputRespuesta(event)" class="">
+                                </div>
+                            </div>
+                            <div class="col s2 m2 l2">
+                                <button type = 'button' class="btn waves-effect waves-light botonRespuesta  enviar-boton col s12"
+                                    type="submit"
+                                    onclick="next(true)"
+                                    id ='enviar-respuesta'
+                                    name="action">Enviar
+                                </button>
+                            </div>
+                            <div class="col s4 m4 l4">
+                                <button class="btn waves-effect waves-light botonRespuesta blue-boton col s12"
+                                    type="submit"
+                                    id ='pasa-palabra'
+                                    onclick="next(false)"
+                                    name="action">PasaPalabra
+                                    <i class="material-icons right">rotate_right</i>
+                                </button>
+                            </div>
+                        </div>    
+                    </div>
+
+                    <!-- Fin Game -->
+                    <div id = 'fin-game' style='display:none'>    
+                        <h4>Fin de del juego</h4>
+                        <div class="row content-fin">
+                            <div class="fixed-action-btn horizontal contentButonUser">
+                                <a class="btn-floating waves-effect waves-light btn-large blue buttonUser">
+                                    <i class="large material-icons">mode_edit</i>
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a  href="#modal-cerrarSesion"
+                                            data-position="left" 
+                                            data-delay="50" 
+                                            data-tooltip="Cerrar Sesion" 
+                                            class="btn-floating modal-trigger tooltipped waves-effect waves-light error ">
+                                            <i class="material-icons">close</i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a  href="#modal-terminarPartida"
+                                            data-position="bottom" 
+                                            data-delay="50" 
+                                            data-tooltip="Volver a empezar" 
+                                            class="btn-floating waves-effect tooltipped waves-light modal-trigger blueC darken-1">
+                                            <i class="material-icons">rotate_right</i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col s3">
+                                <span id='user-fin'>vgamez</span>
+                            </div>
+                            <div class="col s3">
+                                <span style = "color:#4CAF50" id='correctas-fin'>6</span>
+                            </div>
+                            <div class="col s3">
+                                <span style = "color:#F44336" id='incorrectas-fin'>19</span>
+                            </div>
+                            <div class="col s3">
+                                <span id='date-fin'>09/12/2017</span>                                             
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s6 m6 l6">
+                                    <button class="btn waves-effect waves-light botonRespuesta  enviar-boton col s12"
+                                    type="submit"
+                                    onclick="updateUser()"
+                                    id ='añadir-ranking'
+                                    name="action">Añadir al Ranking
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                            <div class="col s6 m6 l6">
+                                <button class="btn waves-effect waves-light modal-trigger botonRespuesta blue-boton col s12"
+                                    type="submit"
+                                    href="#modal-terminarPartida"
+                                    name="action">Repetir Pasapalabra
+                                    <i class="material-icons right">rotate_right</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ranking Template -->
+                <div class="col s12 m12 l12  container rigth-content z-depth-2" style="margin-top: 1em;">
+                    <h4 style = 'margin-top:0;'> Ranking <i class ="material-icons">public</i></h4> 
+                    <div class = 'scroll-container'>
+                        <ul class="collection with-header ranking-ul" id='ranking'></ul>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <!-- MODALS -->
+        <!-- REGISTER -->
+        <div id="modal1" class="modal register-modal" style=""> 
+            <div class="modal-content" style="padding-bottom: 0em;" style="position:relative">
+                <a tabindex="7" class = 'icon-modal modal-action modal-close'><i class="material-icons prefix">clear</i></a>     
+                <div class="row">
+                    <div class="input-field col s8">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input type="text" tabindex="5" id="user-register" placeholder="User Name" class="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8">
+                        <i class="material-icons prefix">https</i>    
+                        <input tabindex="5" id="user-pass" placeholder="Password" type="password" class="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s8">
+                        <i class="material-icons prefix">https</i>    
+                        <input tabindex="5" id="user-passTwo" placeholder="Password" type="password" class="">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer no-paddin-margin" >
+                <button class="btn col s12 register-button no-paddin-margin waves-effect waves-light blue-boton"
+                    type="submit"
+                    onclick="addUserNew()"
+                    tabindex="6"
+                    name="action">Sign Up
+                    <i class="material-icons right"></i>
+                </button>
+            </div>
+        </div> 
+        <!-- Seguro que quieres repetir el pasa palabra? -->
+        <div id="modal-terminarPartida" class="modal">
+            <div class="modal-content">
+                <h4>¿Quieres reiniciar el pasa palabra?</h4>
+                <p>Volveras a empezar de nuevo el pasa palabra. Se generaran un nuevo roscon con <b>preguntas aleatorias</b></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn waves-effect waves-light botonRespuesta blue-boton col s12"
+                    type="submit"
+                    onclick="repetirPasaPalabra(true)"
+                    name="action">Quiero repetirlo definitivamente
+                    <i class="material-icons right">rotate_right</i>
+                </button>
+            </div>
+        </div>
+        <!-- Seguro que quieres Cerrar sesion?-->
+        <div id="modal-cerrarSesion" class="modal">
+            <div class="modal-content">
+                <h4>Log Of</h4>
+                <p>¿Quieres cerrar sesion?</p>
+            </div>
+            <div class="modal-footer">
+                <a  onclick ='logOff()' class="waves-effect waves-green btn-flat">Si</a>
+            </div>
+        </div>
+    </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+            $('#modal1').modal();
+            $('#modal-terminarPartida').modal();
+            $('#modal-cerrarSesion').modal();
+        });
+    </script>
+</body>
+<!-- Footer -->
+<footer id = 'footer' class="page-footer footer-row" style="display:none">
+        <div class="container" style="background: rgba(0, 0, 0, 0)">
+            <div class="row">
+                <a tabindex="0" href="http://www.skylabcoders.com/es"  style = 'color:white !important;' target="_blank">
+                <div class="col l6 s12" style = 'position: relative;'>
+                    <h5 class="white-text" >From SKYLAB Coders Academy</h5>
+                    <img class = 'icon-sky' src="img/icon/Logo Skylab.png" alt="">
+                    <p>cursos de programación para convertirte en desarrollador web</p>
+                </div>
+                </a>
+                <div class="col l5 offset-l1 s12 footerIcons">
+                    <h5 class="white-text">by Victor Gamez Royo</h5>
+                    <a tabindex="0" href="https://github.com/VGamezz19" target="_blank" style="color:white !important">
+                        <i class="fa fa-github icon-git" aria-hidden="true" ></i>
+                    </a>
+                    <a tabindex="0" href="https://twitter.com/VictorGamez1596" target="_blank" style="color:white !important">
+                        <i class="fa fa-twitter icon-twi" aria-hidden="true" ></i>
+                    </a> 
+                    <a tabindex="0" href="https://www.linkedin.com/in/victor-gamez/" target="_blank" style="color:white !important">
+                        <i class="fa fa-linkedin icon-li" aria-hidden="true" ></i>
+                    </a>  
+                </div>
+            </div>
+        </div>
+    </footer>
+</html>

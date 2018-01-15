@@ -1,0 +1,36 @@
+{
+  "name": "pasa-palabra",
+  "version": "0.1.0",
+  "description": "Proyecto final Pre-curso SKYLAB",
+  "engines": {
+    "node": "6.10.1",
+    "npm": "5.6.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.5.1",
+    "consolidate": "^0.15.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.2",
+    "method-override": "^2.1.2",
+    "mongoose": "^4.13.6",
+    "mustache": "^2.3.0"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "nodemon": "^1.12.5",
+    "tape": "^4.7.0"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

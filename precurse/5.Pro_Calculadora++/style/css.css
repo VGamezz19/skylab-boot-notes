@@ -1,0 +1,46 @@
+body {
+    font-family: Verdana;
+}
+.headerTitulo {
+    text-align: center;
+}
+.container {
+    min-height: 2em;
+    max-width: 100%;
+}
+.content {
+    background-color: #938d8d;
+    padding: 1em;
+    margin: 2em 34%;
+    min-height: 1em;
+    max-width: 100%;
+}
+.element {
+    width: 24%;
+    font-size: 2em;
+    border-radius: 0;
+    margin-bottom: 3px;
+}
+.element-header {
+    width: 73%;
+    font-size: 2em; 
+    margin-bottom: 3px;
+}
+.element-bottom{
+    width: 49.2%;
+    font-size: 2em;
+    border-radius: 0;
+}
+.operation {
+ background-color: #F09710;
+ color: white;
+}
+.ac{
+    background-color: #FF0000;
+    color: white
+}
+.header{
+    font-size: 2em;
+    color:white;
+    text-align: center;
+}
