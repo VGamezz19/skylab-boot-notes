@@ -11,6 +11,6 @@ Explico muy por encima el lenguaje MarkDown y algunas caracteristicas a destacar
 
 Todo lo esencial para poder trabajar profesionalmente con git. Muy interesante
 
-## [JavaScript ECMAS5](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01/readme/javascrip.MD)
+## [JavaScript ECMAS5](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01/readme/javascript.MD)
 
 Terminos Basicos y Teoricos de ECMAS5
