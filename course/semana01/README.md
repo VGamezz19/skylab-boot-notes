@@ -5,3 +5,5 @@ Dentro de este MD, veremos muchos de los comandos esenciales para programar y al
 Explico muy por encima el lenguaje MarkDown y algunas caracteristicas a destacar
 ## [GIT](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01/readme/git.MD) 
 Todo lo esencial para poder trabajar profesionalmente con git. Muy interesante
+
+## [JavaScript ECMAS5](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01/readme/javascrip.MD)
