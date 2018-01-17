@@ -43,3 +43,28 @@ Voy a describir los pasos para hacer un `fork` y un `pull request` basandome en 
 -	Si confirman tu `pull request` lo `mergeeran` a `master`
 
 -	Puede darse la casuística, de que el repositorio que te `"forkeaste"` quede obsoleto, ya que han implementado cosas nuevas en el repositorio de produccion. Entonces simplemente tendremos que hacer un `fetch` a nuestro repositorio `local` y finalmente `pushearlo` a gitHub.
+
+**Git fetch** 
+
+Siempre usaremos el `git fetch` cuando tengamos que `mergear` los datos del repositorios main del fork, a nuestro repositorio local
+Primero configuramos el `remote` añadiendo un nuevo parámetro “upstream”
+````
+para ver que configuracion tenemos de los repositorios remotos --> git remote -v
+````
+
+Dentro del nuevo cambo de `upstream` añadiendiremos la URL del clone del proyecto (el que hemos hecho Fork)
+`git remote add upstream https://github.com/manuelbarzi/skylab-bootcamp-201801.git`
+
+Despues requerimos la informacion del repositorio `main` con un `fetch` **Desde MASTER**
+
+`git checkout master  [then]  git fetch upstream`
+
+y despues `git merge upstream/master`
+
+Por ultimo mergeeamos la rama develop. 
+
+**Crear un nuevo Pull Request con otro abierto**
+
+He de crear una nueva rama con un nombre adecuado (normalmente se le pone de nombre algo especifico con lo que vas a trabajar), igualas master a esa nueva `branch` y cuando terminas de trabajar. hacer un `new pull request` desde la `new branch` de tu Fork, al proyecto origina `dev, nunca master`.
+
+En los Pull Request siempre hay revisores de codigo (3) y hasta que los revisores no den el visto bueno al codigo que se quiere `meergear` en `master`, no se podra mergear en master (valgame la reduncancia)

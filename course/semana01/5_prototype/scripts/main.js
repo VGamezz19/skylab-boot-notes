@@ -24,6 +24,16 @@ Student.prototype = new Person()
 Student.prototype.greeting = function () {
     return `Yo i'm ${this.firstName}`
 }
+//Teacher
+function Teacher(firstName, lastName, age, gender, interests, subject) {
+    this.subject = subject
+    Person.call(this,firstName, lastName, age, gender, interests)
+}
+Teacher.prototype = new Person()
+Teacher.prototype.greeting = function () {
+    return `Hello. My name is ${this.gender == "male" ? "Mr." : "Mrs."} ${this.lastName} and I teach ${this.subject}`
+}
     
-var p1 = new Person("Victor", "Gamez", 15, "male", ["sports", "programing", "games", "fun"])
-var s1 = new Student("Victor", "Gamez", 15, "male", ["sports", "programing", "games", "fun"])
+var p1 = new Person("Victor", "Gamez", 21, "male", ["sports", "programing", "games", "fun"])
+var s1 = new Student("Paula", "Sanchez", 18, "famel", ["football", "run", "fun"])
+var t1 = new Teacher("Eric", "Bins", 42, "male", ["persons", "eat", "read", "fun"], "Psicology")
