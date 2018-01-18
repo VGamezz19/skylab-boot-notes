@@ -37,13 +37,11 @@ como por ejemplo: var a = "hola"; <-- statemen que declara una variable
 
 ````javascript
 function testDefault (a) {
-	switch(a){
-        case 1 :
-			console.log("hola")
-			break
-        default: 
-			console.log("nada")
-	}
+    switch(a){
+        case 1 : console.log("hola")
+                 break
+        default: console.log("nada")
+    }
 }
 ````
 
