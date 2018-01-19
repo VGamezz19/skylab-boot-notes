@@ -173,4 +173,5 @@ Para poder testear nuestro nuevo Polifield en un navegador nuevo, tendremo que e
 delete Array.prototype.forEach
 ```
 
+## This, Self, Call, Bind, Apply
 
