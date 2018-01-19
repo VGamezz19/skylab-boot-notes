@@ -11,6 +11,10 @@ Explico muy por encima el lenguaje MarkDown y algunas caracteristicas a destacar
 
 Todo lo esencial para poder trabajar profesionalmente con git. Muy interesante
 
+## [Deployment enviromment](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01/readme/enviromment.MD)
+
+Explicacion basica de la seperacion de `enviroments` que tiene un proyecto web, que hacer en cada entorno y como proceder cuando se han de solucionar **Bugs**
+
 ## [JavaScript ECMAS5](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01/readme/javascript.MD)
 
 Terminos Basicos y Teoricos de ECMAS5

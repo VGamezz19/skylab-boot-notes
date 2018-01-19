@@ -31,6 +31,45 @@ Como dato: **statements** son las lineas que se van a ejecutar.
 como por ejemplo: var a = "hola"; <-- statemen que declara una variable
 ````
 
+## Hoisting
+
+JavaScript siempre pondrá arriba las definiciones de las variables. Por Ejemplo:
+
+```javascript
+function () {
+ a = “hola”
+ console.log(a)
+ var a
+}
+
+//================= Igual que ...
+
+function () {
+ var a
+ a = “hola”
+ console.log(a)
+}
+```
+
+Digamos que JavaScript chuta hacia arriba las definiciones de varibales `var`
+ortro ejemplo:
+
+```javascript
+function () {
+    console.log(y) //undefined
+    var y = 0
+}
+
+//================= Igual que ...
+
+function () {
+    var y
+    console.log(y) //undefined
+    y = 0
+}
+```
+
+
 ## Condicionales
 
 - `Switch` se usa cuando tenemos muchos elseIF en un condicional.
@@ -53,7 +92,7 @@ if(a==1){
     return //adios
 }
 
-//========The-Same===========
+//================= Igual que ...
 
 if (a==1) return //hola
 
@@ -134,4 +173,5 @@ Para poder testear nuestro nuevo Polifield en un navegador nuevo, tendremo que e
 delete Array.prototype.forEach
 ```
 
+## This, Self, Call, Bind, Apply
 
