@@ -156,7 +156,7 @@ Student.prototype.greeting = function () {
 }
 ```
 
-## Polifield
+## Polyfille
 
 El termino Polifield es cuando modificamos el `__proto__` del core de JavaScript, porque en segun que navegadores (antiguos) estan objsoletos y no soportan segun que metodos de JavaScript.
 `Array.prototype.forEach = function () { ... }`
