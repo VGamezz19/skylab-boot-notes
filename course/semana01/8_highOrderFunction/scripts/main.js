@@ -76,14 +76,9 @@ console.log((function reduceFunt() {
 //Write a high order function that returns true if all months 
 // have five letters or more, and if some month has five letters or more.
 
+var months = ['january','february','march','april','may','june','july','august', 'september','october','november','december']
+  console.log(months.every(function (el){
+    console.log(el)
+      return el.length >= 5;
+  }))   //return False 
 
-// var months = ['january','february','march','april','may','june','july','august', 'september','october','november','december']
-function someEveryFunc(){
-    var months = ['january','february','march','april','may','june','july','august', 'september','october','november','december']
-    return months.every(function(el){
-        console.log(el)
-        return el.length >= 5 
-    })  
-}
-
-someEveryFunc()
