@@ -66,5 +66,6 @@ Por ultimo mergeeamos la rama develop.
 **Crear un nuevo Pull Request con otro abierto**
 
 He de crear una nueva rama con un nombre adecuado (normalmente se le pone de nombre algo especifico con lo que vas a trabajar), igualas master a esa nueva `branch` y cuando terminas de trabajar. hacer un `new pull request` desde la `new branch` de tu Fork, al proyecto origina `dev, nunca master`.
+Si quiero crear una  nueva PR, tendre que crear una nueva rama desde el `fetch del origina`. Me posiciono haciendo un `git checkout upstream/develop` y despues crear una rama com `git checkout -b @nombreRama`
 
 En los Pull Request siempre hay revisores de codigo (3) y hasta que los revisores no den el visto bueno al codigo que se quiere `meergear` en `master`, no se podra mergear en master (valgame la reduncancia)
