@@ -22,6 +22,10 @@
 	- `ga —> git add `
 	- `gc —> git commit -m`
 	- `gst —> git status`
+	- `gch -> git checkout`
+	- `gpush -> git push`
+	- `gpull -> git pull`
+	- `branch -> git branch -a` 
 	- `ll —>  ls -la`
 	- `take` —>  `mkdir $1 + cd $1`
 	- `rmd` —> `rm -rf $1`
