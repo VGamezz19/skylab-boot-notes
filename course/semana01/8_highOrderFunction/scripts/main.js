@@ -34,18 +34,6 @@ function filterFun() {
 }
 
 // ## reduce
-
-// Write a high order function that counts all the vowels of the following text.
-
-// // ```
-// // var loremIpsum = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-//  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
-//   quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
-//   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
-//    vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-//  blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
-// // ```
-
 //Example Reduce
 var names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice'];
 
@@ -60,25 +48,64 @@ var countedNames = names.reduce(function (allNames, name) {
 // countedNames is:
 // { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }
 
-console.log((function reduceFunt() {
-    var loremIpsum = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
-    return loremIpsum.split("").reduce(function (allWordCount, word) {
-        if (word === ' ') {
-            return allWordCount += 1
-        }
-        return allWordCount
-    }, 1)
-})())
+// Write a high order function that counts all the vowels of the following text.
 
+// // ```
+// // var loremIpsum = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+//  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,
+//   quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+//   Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
+//    vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
+//  blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+// // ```
 
+var loremIpsum = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.'
+
+var countVowels;
+(function () {
+    var regex = /[aáàäèéëeìíïiòóoöúùüu]/ig;
+    //i -> ignore case (upper, lower)
+
+    countVowels = function (text) {
+        return text.split("").reduce(function (vowelsCount, letter) {
+
+            if (letter.toLowerCase().match(regex)) {
+                return vowelsCount += 1
+            }
+            return vowelsCount
+        }, 0)
+    }
+})()
 //## every & some
 
 //Write a high order function that returns true if all months 
 // have five letters or more, and if some month has five letters or more.
+//---------------------
+//como bien dice las palabras de every y some, every, buscara en todos los elementos, si cumple la condicion
+//para todos los elementos, devolvera TRUE, si no coincide con algun caso, romperar el recorrido y devolvera False
+//el Some, solo si encuentra UNO que compla la condicion, devolvera TRUE.
+var months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 
-var months = ['january','february','march','april','may','june','july','august', 'september','october','november','december']
-  console.log(months.every(function (el){
-    console.log(el)
-      return el.length >= 5;
-  }))   //return False 
+console.log(months.every(function (el) {
+    return el.length >= 5;
+})) //return False 
 
+console.log(months.some(function (el) {
+    return el.length >= 5;
+})) //return True
+
+//-------------------
+//CallBack ASYNC
+
+function call(callback) {
+    console.log("Pidiendo datos al servidor...")
+    setTimeout(function () {
+        callback()
+    }, 2000)
+}
+
+function serverRequest() {
+    console.log("Done! request succes!")
+}
+
+call(serverRequest)
