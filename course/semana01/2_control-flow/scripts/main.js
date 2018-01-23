@@ -96,13 +96,26 @@ console.log('signProduct should result "-" for inputs -1, -2, -3 =>', signProduc
 function sortNumbers(a, b, c) {
     var array = [];
     switch (true) {
-        case a > b && b > c: array.push(a, b, c); break;
-        case b > c && c > a: array.push(b, c, a); break;
-        case c > a && a > b: array.push(c, a, b); break;
-        case a > c && c > b: array.push(a, c, b); break;
-        case b > a && a > c: array.push(b, a, c); break;
-        case c > b && b > a: array.push(c, b, a); break;
-        default: console.error("unpredicted case!");
+        case a > b && b > c:
+            array.push(a, b, c);
+            break;
+        case b > c && c > a:
+            array.push(b, c, a);
+            break;
+        case c > a && a > b:
+            array.push(c, a, b);
+            break;
+        case a > c && c > b:
+            array.push(a, c, b);
+            break;
+        case b > a && a > c:
+            array.push(b, a, c);
+            break;
+        case c > b && b > a:
+            array.push(c, b, a);
+            break;
+        default:
+            console.error("unpredicted case!");
     }
     // var string = '';
     // for (var i = 0; i <= array.length - 1; i++) {
@@ -199,11 +212,11 @@ function asterisct() {
 }
 console.log('Tendria que mostrar un arbolito muy bonito!! =>\n', asterisct());
 
-function oddEvent (a){
+function oddEvent(a) {
     var sum = 0;
-    while(a--) {
-        if (a%3 == 0) sum += a
-        else if (a%5 == 0) sum += a
+    while (a--) {
+        if (a % 3 == 0) sum += a
+        else if (a % 5 == 0) sum += a
     }
     return sum
 }
