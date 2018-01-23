@@ -1,0 +1,49 @@
+ul>li {
+    text-decoration: underline;
+    list-style: square;
+    background-color: white;
+    margin-left: -15px;
+    text-align: center;
+}
+
+ul {
+    background-color: skyblue;
+    width: 3%;
+}
+
+h1 {
+    text-decoration: underline red;
+    text-shadow: 20px -10px 4px #000000c7;
+}
+
+.green-rounded-button {
+    padding: 35px 55px;
+    color: white;
+    font-size: 25px;
+    border-radius: 30px;
+    background-color: green;
+    border: 3px solid black;
+    box-shadow: 0px 8px #888888;
+}
+
+.green-rounded-button:hover {
+    background-color: white;
+    color: black;
+}
+
+
+img {
+    border-radius: 100%;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    border: 5px dotted
+}
+
+#triangle-up{
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+   
+   }
