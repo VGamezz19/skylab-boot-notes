@@ -1,9 +1,27 @@
-http://flukeout.github.io/
+## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/)   CSS
 
-http://cssgridgarden.com/#es
+CSS (`Cascade Style Sheet`) Como bien indica su nombre, la definicion de los estilos se hace en cascada. dependiendo del orden, altera el producto, y depende de lo tipada que este la busqueda, tambien. por ejemplo:
 
-http://flexboxfroggy.com/#es
+```css
+ul>li .firstElement{
+    background-color: blue;
+}
+ul>{
+    background-color:red;
+}
+```
+Todos los elemento del `ul` se veran de colo red, ya que lo hemos definido incorrectamente dentro de la "cascada" de CSS
+la forma correcta seria:
+```css
+ul>{
+    background-color:red;
+}
+ul>li .firstElement{
+    background-color: blue;
+}
+```
 
-https://specificity.keegan.st/
+Una pagina muy importante para aprender como acceder correctamente a segun que elementos de nuestro esqueleto `HTML`, es la pagina [CSS Diner](http://flukeout.github.io/), muy buena para practicar!
 
-https://flexbox.io/
+Tambien existen otras paginas para ptracticar tu [GridWeb](http://cssgridgarden.com/#es), [FlexBox](http://flexboxfroggy.com/#es) . Para ver más sobre el mundo de [FlexBox](https://flexbox.io/)
+
