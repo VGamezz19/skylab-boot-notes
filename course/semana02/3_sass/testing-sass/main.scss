@@ -1,6 +1,5 @@
 // variables
 $defauls-size:100px;
-
 // Estructura
 body {
     background-color: skyblue;
@@ -33,19 +32,17 @@ nav {
 }
 
 // Import
-@import 'import'; 
-
+@import 'import';
 // Mixin
 @mixin border-radius($radius) {
-    border-radius : $radius;
+    border-radius: $radius;
 }
 
-div{
+div {
     @include border-radius(10px)
 }
 
 //Share
-
 %share {
     font-size: 3em;
     font-kerning: auto;
@@ -56,17 +53,18 @@ div{
     @extend %share;
     color: blue
 }
+
 .green {
     @extend %share;
     color: green
 }
+
 .yellow {
     @extend %share;
     color: yellow
 }
 
 //Operations
-
 .calculo {
     width: 500 /600 * 100%;
 }

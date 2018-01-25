@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 var index = 0;
 var arrayTest = [1, 2, 3, 4, 5, 6, 7];

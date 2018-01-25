@@ -34,9 +34,9 @@ Siempre, para trabajar con `Flex`, tendremos que definir al padre el contenedor 
 
 ## Etiquetas para el Padre
 
-`display:flex` Definir el contenedor que va a contener contenido `flex`
+## `display:flex` Definir el contenedor que va a contener contenido `flex`
 
-`flex-direction` La direccion que va a tomar el padre `flex`
+## `flex-direction` La direccion que va a tomar el padre `flex`
 
 ![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/flex-direction.png)
 
