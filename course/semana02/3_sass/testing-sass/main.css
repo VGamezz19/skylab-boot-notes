@@ -1,0 +1,33 @@
+body {
+  background-color: skyblue;
+  width: 100px; }
+
+html {
+  color: black; }
+
+nav ul li {
+  color: blue; }
+nav b section article .class div #elId {
+  background-color: red; }
+
+span .scssImportado {
+  color: green; }
+
+div {
+  border-radius: 10px; }
+
+.blue, .green, .yellow {
+  font-size: 3em;
+  font-kerning: auto;
+  background-color: aliceblue; }
+
+.blue {
+  color: blue; }
+
+.green {
+  color: green; }
+
+.yellow {
+  color: yellow; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,72 @@
+// variables
+$defauls-size:100px;
+
+// Estructura
+body {
+    background-color: skyblue;
+    width: $defauls-size;
+}
+
+html {
+    color: black;
+}
+
+nav {
+    ul {
+        li {
+            color: blue;
+        }
+    }
+    b {
+        section {
+            article {
+                .class {
+                    div {
+                        #elId {
+                            background-color: red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Import
+@import 'import'; 
+
+// Mixin
+@mixin border-radius($radius) {
+    border-radius : $radius;
+}
+
+div{
+    @include border-radius(10px)
+}
+
+//Share
+
+%share {
+    font-size: 3em;
+    font-kerning: auto;
+    background-color: aliceblue;
+}
+
+.blue {
+    @extend %share;
+    color: blue
+}
+.green {
+    @extend %share;
+    color: green
+}
+.yellow {
+    @extend %share;
+    color: yellow
+}
+
+
+
+
+
+
