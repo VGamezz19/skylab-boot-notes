@@ -1,0 +1,38 @@
+$paddings : 5 * 4px;
+$ALIGN-DEFAULD : center;
+
+
+// Mixin
+@mixin border-radius($radius, $color, $width) {
+  border-radius: $radius;
+  border-color:  $color;
+  border-width: $width; 
+}
+
+body {
+  background-color: white;
+  font: normal 14px courier,sans-serif; }
+
+.container {
+  padding: 25px;
+  position: fixed; }
+
+.form-login {
+  background-color: aquamarine;
+  padding-top: 2 * 5px;
+  padding-bottom: $paddings;
+  padding-left: $paddings;
+  padding-right: $paddings;
+  }
+
+h4 {
+  border: 0 solid white;
+  border-bottom-width: 1px;
+  padding-bottom: 10px;
+  text-align: $ALIGN-DEFAULD ; }
+
+.form-control {
+  @include border-radius(10px, gray, 1px); }
+
+.wrapper {
+  text-align: $ALIGN-DEFAULD ; }
