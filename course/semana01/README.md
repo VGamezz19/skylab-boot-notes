@@ -1,4 +1,4 @@
-# [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/) Semnana01
+# [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/) Semnana01
 
  ## [Commands](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01/readme/command.MD) 
 

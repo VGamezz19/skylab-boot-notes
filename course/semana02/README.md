@@ -1,5 +1,5 @@
 
-# [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/) Semnana02
+# [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/) Semnana02
 
 ## [HTML5](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana02/readme/HTML.MD)
 
