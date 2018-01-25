@@ -1,12 +1,11 @@
-function test(_word) {
-    var word = _word;
+function text(_text) {
 
     function oneSymbol(el) {
-        return word = el + word;
+        return _text = el + _text ;
     }
 
     function thowSymbol(el1, el2) {
-        return word = el1 + word + el2;
+        return _text = el1 + _text + el2;
     }
 
     return {
@@ -40,14 +39,15 @@ function test(_word) {
             }
         },
         toString: function toString() {
-            return word;
+            return _text;
         }
     }
 }
 
-console.log("This test should be *{hola} -->", test("hola").wrap("{", "}").wrap("*").toString());
-console.log("This test should be $[*{hola}]$ -->", test("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap("$", "$").toString());
-console.log("This test should be Error Somthing Wrong  ... -->", test("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap().toString());
-console.log("This test should be Error Envalid parameters, functions Wrap only accepts Strings Symbols--> Wrap(element {string}, secondOptionalElement {string}) -->", test("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap(3).toString());
-console.log("This test should be Error Only accepts Symbols. -->", test("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap("h").toString());
-console.log("This test should be Error Only accepts Symbols. -->", test("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap("[", "a").toString());
+console.log("This text should be *{hola} -->", text("hola").wrap("{", "}").wrap("*").toString());
+console.log("This text should be $[*{hola}]$ -->", text("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap("$", "$").toString());
+console.log("This text should be Error Somthing Wrong  ... -->", text("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap().toString());
+console.log("This text should be Error Envalid parameters, functions Wrap only accepts Strings Symbols--> Wrap(element {string}, secondOptionalElement {string}) -->", text("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap(3).toString());
+console.log("This text should be Error Only accepts Symbols. -->", text("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap("h").toString());
+console.log("This text should be Error Only accepts Symbols. -->", text("hola").wrap("{", "}").wrap("*").wrap("[", "]").wrap("[", "a").toString());
+console.log("This text should be $[*{HOLA}]$  -->", text("hola").wrap("{", "}").wrap("*").wrap("[", "]").toString().toUpperCase());
