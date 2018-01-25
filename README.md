@@ -3,6 +3,6 @@
 ## [Semana01](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana01) - Commands - MarkDown - CVS/GIT - JS - Clousures - TestJasmine - HihgOrderFunctions - Objects/__ Proto __
 ### 15-01-2018
 
-## [Semana02](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana02) - HTML - CSS
+## [Semana02](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana02) - HTML - CSS - FlexBox - GridCSS - SASS
 ### 22-01-2018
 
