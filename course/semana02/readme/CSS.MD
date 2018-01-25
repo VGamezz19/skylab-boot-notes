@@ -43,16 +43,19 @@ Siempre, para trabajar con `Flex`, tendremos que definir al padre el contenedor 
 
 ## `flex-wrap`
 
-Le añadimos el trivuto `wrap` al contenedor padre, haciendo que si un contenido no cabe, lo podra directamente abajo.
-    ![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/flex-wrap.png)
+Le añadimos el trivuto `wrap` al contenedor padre, haciendo que si un contenido no cabe, lo podra directamente abajo. 
+
+ ![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/flex-wrap.png)   
 
 ## `flex-flow`
 Podemos definir `flex-direction` y `flex-wrap` en la misma etiqueta
+
 ![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/flex-flow.png)
 
 
 ## `justify-content`
 Servir de forma general el contenido.
+
 ![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/justify-content.png)
     
 
@@ -63,6 +66,8 @@ Servir de forma general el contenido.
 ## `align-content`
 ![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/align-content.png)
 
+Para ver mas, mirar [flexBox css-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
     
 ## Grid Css
 
+Mirar [Grid css-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
