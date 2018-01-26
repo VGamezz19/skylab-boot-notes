@@ -27,7 +27,7 @@ document.getElementsByTagName('form')[0].addEventListener('submit', function (e)
     // confirm.onclick = function () {
     //     console.log('remove me', item);
 
-    //     list.removeChild(item);
+    //     list.removeChild(item);xs
     // };
 
     //item.innerHTML = title + '<a href="#">✓</a>';
