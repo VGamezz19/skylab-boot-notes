@@ -175,3 +175,20 @@ delete Array.prototype.forEach
 
 ## This, Self, Call, Bind, Apply
 
+## Self-Executing Anonymous Functions
+
+para ver [informacion detallada](http://markdalgleish.com/2011/03/self-executing-anonymous-functions/)
+
+Ejemplo:
+
+````javascript
+(function(){
+  var foo = 'Hello';
+  var bar = 'World!'
+  
+  function baz(){
+      return foo + ' ' + bar;
+  }
+})();
+````
+
