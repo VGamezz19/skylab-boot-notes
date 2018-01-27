@@ -1,7 +1,7 @@
 function text(_text) {
 
     function oneSymbol(el) {
-        return _text = el + _text ;
+        return _text = el + _text;
     }
 
     function thowSymbol(el1, el2) {
@@ -61,17 +61,17 @@ console.log("This text should be $[*{HOLA}]$  -->", text("hola").wrap("{", "}").
 
 var text;
 (function () {
-  function wrap(text, before, after) {
-    return (before || '') + text + (after || before || '');
-  }
-
-  text = function (_text) {
-    var __text = new String(_text);
-
-    __text.wrap = function (before, after) {
-      return text(wrap(_text, before, after));
+    function wrap(text, before, after) {
+        return (before || '') + text + (after || before || '');
     }
 
-    return __text;
-  }
+    text = function (_text) {
+        var __text = new String(_text);
+
+        __text.wrap = function (before, after) {
+            return text(wrap(_text, before, after));
+        }
+
+        return __text;
+    }
 })();

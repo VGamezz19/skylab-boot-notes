@@ -3,12 +3,15 @@ var num;
     function sum(_num, inputNum) {
         return _num + inputNum;
     }
+
     function minor(_num, inputNum) {
         return _num - inputNum;
     }
+
     function mult(_num, inputNum) {
         return _num * inputNum;
     }
+
     function div(_num, inputNum) {
         return _num / inputNum;
     }
