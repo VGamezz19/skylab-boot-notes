@@ -21,4 +21,3 @@ $box1.click(function (e) {
 
 Es necesario poner en la nueva variable decinida como el `objeto jQuery` del `DOM` con `$` para poder identificarla más tarde (como un recordatorio).
 
- 
