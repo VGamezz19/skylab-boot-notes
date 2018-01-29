@@ -1,14 +1,10 @@
-var secretWord;
-var attempsGlobal;
-
-function Game(word, attemps) {
+function gamePredator(word, attemps) {
     var word = word.toLocaleLowerCase()
     if (word && attemps) {
         var correctLetters = []
         this.try = function (string) {
             var self = this
             if (string && isNaN(string)) {
-                
 
                 if (attemps >= 0) return (string.length > 1) ? allWord(string) : letter(string)
 
@@ -21,7 +17,7 @@ function Game(word, attemps) {
                 var string = string.toLocaleLowerCase()
 
                 if (word.includes(string)) {
-                    
+
                     var currentWordUser = word.split("").map(function (el) {
                         return (correctLetters.includes(el)) ? el : "_"
                     }).join(" ")
@@ -40,18 +36,17 @@ function Game(word, attemps) {
                     return "Alien ate you... holy s***"
                 }
                 return attemps + ") " + self.print()
-                
+
             }
 
             function allWord(string) {
                 var string = string.toLocaleLowerCase()
-                
+
                 if (string === word) {
                     attemps = 0
                     return "You WIN! the Word is " + word
-                }
-                console.log("Too bad... you " + ((attemps >= 0) ? ("only have " + attemps) : "lost noob"))
-                return attemps + ") " + self.print()
+                }    
+                return "Too bad... you Alien fuuck you"
             }
         }
         this.print = function () {
@@ -62,54 +57,6 @@ function Game(word, attemps) {
             }).join(" ")
         }
     } else {
-        return console.error("no word or attemps inputed")
+        return "No word or attemps inputed"
     }
 }
-
-
-start();
-
-function start() {
-  $(".noAnimation").children().hide()
-  $("#mainAnimation").show();
-  $("#start").show();
-}
-
-function defineWord() {
-  $("#start").hide();
-  $("#defineWord").show();
-
-}
-
-
-function playingGame(secretWord) {
-  this.secretWord = secretWord;
-  $("#defineWord").hide();
-  $("#playingGame").show();
-  newGame = new Game(secretWord, 10);
-}
-
-
-function resultLose(state) {
-  $("#playingGame").hide();
-  $("#resultLose").show();
-  if (state === 1) $("#resultLose").show('No more attemps');
-  if (state === 2) $("#resultLose").show('You are wrong with the word');
-}
-
-function resultWin(attempsVal) {
-  $("#playingGame").hide();
-  $("#resultWin").show();
-  $("#attemps").show(attempsVal);
-  $("#secretWord").show(secretWord);
-}
-
-
-$("#formTry").submit(function (e) {
-    e.preventDefault();
-    var value = $("#inputHang").val()
-    $("#resultTextH1").html(newGame.try(value))
-
-})
-
-

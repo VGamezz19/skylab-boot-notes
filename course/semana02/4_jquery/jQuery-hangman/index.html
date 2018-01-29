@@ -13,10 +13,7 @@
     <header>
         <section>
             <h1>HangPredator</h1>
-            <div>
-                <img src="public/alien.png" alt="">
-            </div>
-
+            <img id = 'headerPredator' src="public/alien.png" alt="">
         </section>
     </header>
     <main class='mainAnimation'>
@@ -26,56 +23,6 @@
 
     <main class='noAnimation'>
 
-        <section id='start'>
-            <h2>Wellcome to Hangman Game</h2>
-            <form action="javascript:defineWord();" method="post">
-                <input type="submit" value="Play!">
-
-
-            </form>
-        </section>
-
-        <section id='defineWord'>
-            <h2>Enter a secret word!</h2>
-            <form action="javascript:enterButton();" method="post">
-                <input type="password" id="secretWordInput" name="secretWord">
-                <button onclick="playingGame(document.getElementById('secretWordInput').value)">OK</button>
-            </form>
-        </section>
-
-        <section id='playingGame'>
-
-            <h1 id ='resultTextH1'></h1>
-
-            <form id = 'formTry'action="" method="post">
-
-                <input id = 'inputHang' type="text" name="vowel">
-
-                <input type="submit" value="Try!">
-            </form>
-
-        </section>
-
-        <section id='resultWin'>
-
-            <h2>Well done! You have guessed the word.</h2>
-
-            <h1 id='secretWord'></h1>
-
-            <h2>in
-                <h2 id="attemps"></h2> attemps.</h2>
-
-            <input type="playAgain" value="Play Again!">
-
-        </section>
-
-        <section id='resultLose'>
-            <h2 id="messageLose"></h2>
-            <h2>You loose. Don't worry. Try again!</h2>
-            <h1 id='secretWord'></h1>
-            <input type="playAgain" value="Play Again!">
-
-        </section>
     </main>
 
 
@@ -85,7 +32,8 @@
 
     <script src="vendor/jquery/3.3.1/jquery.min.js"></script>
     <script src="scripts/animation.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/hangPredator.js"></script>
 </body>
 
 </html>
