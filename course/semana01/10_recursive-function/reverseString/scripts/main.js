@@ -14,11 +14,8 @@ console.log(`"hello" Should return ---> olleh `, reverseString('hello'));
 //La mejor forma es ... 
 
 function reverseString(str) {
-    if (str === '') {
-        return ''
-    } else {
-       return reverseString(str.slice(1)) + str.charAt(0)
-    } 
+    if (str) return reverseString(str.slice(1)) + str.charAt(0)
+    return ''
 }
 
 console.log(`"hello" Should return ---> olleh `, reverseString('hello'));
