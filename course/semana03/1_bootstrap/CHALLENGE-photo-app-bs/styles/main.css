@@ -32,6 +32,8 @@ footer {
     footer section img {
       border: none;
       margin-top: 1em; }
+    footer section h5 span {
+      margin-right: 10px; }
 
 .footerBottom {
   background-color: #2f2f3c;
