@@ -1,48 +1,47 @@
+var newGame
+var $noAnimation = $(".noAnimation");
+var $endGame = $(".endGame");
+var $endGameTitle = $("#endGameTitle");
+var $inGame = $(".inGame");
+var $inputInGame = $("#inputInGame")
+var $myStatusTitleWord = $("#myStatusTitleWord")
 
-
-start();
-
-function start() {
-  $(".noAnimation").children().hide()
-//   $("#mainAnimation").show();
-//   $("#start").show();
+// tipos de acciones
+function endGameLost() {
+    $noAnimation.children().addClass("hidden")
+    $endGame.removeClass("hidden")
+    $endGameTitle.text("Alien ate predator... He die... but Alien is so happy! 😁")
+    instaKillPredator()
 }
 
-function defineWord() {
-  $("#start").hide();
-  $("#defineWord").show();
-
+function endGameWin() {
+    $noAnimation.children().addClass("hidden")
+    $endGame.removeClass("hidden")
+    $endGameTitle.text("You Win!!! Alien never will kill us.")
 }
 
+function startGame(word) {
+    newGame = new gamePredator(word, 10);
+    $noAnimation.children().addClass("hidden")
+    $inGame.removeClass("hidden")
 
-function playingGame(secretWord) {
-  this.secretWord = secretWord;
-  $("#defineWord").hide();
-  $("#playingGame").show();
-  newGame = new Game(secretWord, 10);
+    $myStatusTitleWord.text(newGame.print())
 }
 
-
-function resultLose(state) {
-  $("#playingGame").hide();
-  $("#resultLose").show();
-  if (state === 1) $("#resultLose").show('No more attemps');
-  if (state === 2) $("#resultLose").show('You are wrong with the word');
-}
-
-function resultWin(attempsVal) {
-  $("#playingGame").hide();
-  $("#resultWin").show();
-  $("#attemps").show(attempsVal);
-  $("#secretWord").show(secretWord);
-}
-
-
-$("#formTry").submit(function (e) {
+// Forms actions in Game
+$(".initGame").submit(function (e) {
     e.preventDefault();
-    var value = $("#inputHang").val()
-    $("#resultTextH1").html(newGame.try(value))
-
+    var wordGame = $("#initWorldGame").val()
+    startGame(wordGame)
 })
 
+$inGame.submit(function (e) {
+    e.preventDefault();
+    var tryIt = $inputInGame.val()
+    $myStatusTitleWord.text(newGame.try(tryIt))
+    $inputInGame.val("")
+})
 
+$("#replayButton").on("click", function(){
+    location.reload(true);
+})

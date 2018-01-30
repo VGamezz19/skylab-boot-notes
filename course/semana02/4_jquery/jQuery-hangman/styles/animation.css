@@ -14,7 +14,7 @@ header {
 
 header section {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 60% 50%;
 }
 
 header section h1 {
@@ -50,9 +50,58 @@ header section img {
 /* Content STYLES */
 
 .noAnimation{
-    height: 50%;
+    height: auto;
     margin: 2em 5em;
     padding: 1em;
     background-color: #00000087;
     color: lime;
+}
+
+.hidden {
+    display: none !important;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    width: 30%;
+    /* flex: 2; */
+    /* height: 50px; */
+    align-self: center;
+    margin: 10px 10px;
+    font-size: 2em;
+}
+
+form h1 {
+    text-align: center;
+}
+
+form button {
+    width: 30%;
+    /* flex: 2; */
+    /* height: 50px; */
+    align-self: center;
+    margin: 10px 10px;
+    font-size: 2em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+}
+
+section button {
+    width: 30%;
+    /* flex: 2; */
+    /* height: 50px; */
+    align-self: center;
+    margin: 10px 10px;
+    font-size: 2em;
+}
+
+section h1 {
+    text-align: center;
 }

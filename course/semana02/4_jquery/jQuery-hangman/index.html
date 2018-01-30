@@ -13,7 +13,7 @@
     <header>
         <section>
             <h1>HangPredator</h1>
-            <img id = 'headerPredator' src="public/alien.png" alt="">
+            <img id='headerPredator' src="public/alien.png" alt="">
         </section>
     </header>
     <main class='mainAnimation'>
@@ -22,7 +22,20 @@
     </main>
 
     <main class='noAnimation'>
-
+        <form class='initGame'>
+            <h1>Insert a word to play in HangPredator</h1>
+            <input id="initWorldGame" type="text">
+            <button type="submit">DONE!</button>
+        </form>
+        <form class='inGame hidden'>
+            <h1 id="myStatusTitleWord"></h1>
+            <input id="inputInGame" type="text">
+            <button type="submit">Try...</button>
+        </form>
+        <section class='endGame hidden'>
+                <h1 id="endGameTitle"></h1>
+                <button id= 'replayButton' type="submit">Replay</button>
+        </section>
     </main>
 
 

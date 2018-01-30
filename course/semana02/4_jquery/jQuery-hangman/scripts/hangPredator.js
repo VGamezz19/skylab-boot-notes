@@ -8,7 +8,7 @@ function gamePredator(word, attemps) {
 
                 if (attemps >= 0) return (string.length > 1) ? allWord(string) : letter(string)
 
-                return console.error("NO MORE ATTEMPS, GAME OVER")
+                return endGameLost() 
             }
 
             return console.error("no letter inputed")
@@ -24,7 +24,7 @@ function gamePredator(word, attemps) {
                     correctLetters.push(string)
                     if (currentWordUser == word) {
                         attemps = 0
-                        return "You WIN! the Word is " + word
+                        return endGameWin() 
                     }
                     console.log("Nice! " + string + " is correct letter! ")
                     return attemps + ") " + self.print()
@@ -33,7 +33,7 @@ function gamePredator(word, attemps) {
                 attemps--
                 failLiterActioningAnimation()
                 if (attemps < 1) {
-                    return "Alien ate you... holy s***"
+                    return endGameLost() 
                 }
                 return attemps + ") " + self.print()
 
@@ -44,9 +44,9 @@ function gamePredator(word, attemps) {
 
                 if (string === word) {
                     attemps = 0
-                    return "You WIN! the Word is " + word
+                    return endGameWin() 
                 }    
-                return "Too bad... you Alien fuuck you"
+                return endGameLost() 
             }
         }
         this.print = function () {

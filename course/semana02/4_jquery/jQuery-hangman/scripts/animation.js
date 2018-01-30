@@ -9,6 +9,7 @@ function failLiterActioningAnimation() {
         $alien.animate({right: "+=9.5%"}, "slow" )
     } else {
         $predator.attr("src", "./public/muertePredator.gif");
+        endGameLost() 
     }
 
 }
@@ -18,3 +19,8 @@ function instaKillPredator (){
     $predator.attr("src", "./public/muertePredator.gif");
     $("#headerPredator").attr("src", "./public/alienDance.gif");
 }
+
+
+$alien.on("click", function(){
+    endGameLost()
+})
