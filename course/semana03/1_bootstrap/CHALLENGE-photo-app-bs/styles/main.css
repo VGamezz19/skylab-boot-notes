@@ -1,0 +1,51 @@
+header {
+  color: white;
+  background-color: #2f2f3c;
+  margin-bottom: 4em; }
+  header h1,
+  header h5 {
+    text-align: center; }
+    header h1 b,
+    header h5 b {
+      color: green; }
+  header img {
+    width: 300px;
+    padding: 1em; }
+
+main section img {
+  height: auto;
+  width: 100%;
+  display: block;
+  border: 1px solid grey;
+  padding: 5px; }
+main section span {
+  display: block;
+  word-wrap: break-word; }
+main section button {
+  margin: 15px 0; }
+
+footer {
+  background-color: #39cd97;
+  color: white; }
+  footer section {
+    padding: 3em; }
+    footer section img {
+      border: none;
+      margin-top: 1em; }
+
+.footerBottom {
+  background-color: #2f2f3c;
+  color: white;
+  padding: 1em; }
+  .footerBottom ul {
+    display: inline-flex;
+    display: block;
+    list-style: none;
+    padding: 0; }
+    .footerBottom ul li {
+      display: inline;
+      margin: 10px; }
+      .footerBottom ul li a {
+        color: white; }
+
+/*# sourceMappingURL=main.css.map */
