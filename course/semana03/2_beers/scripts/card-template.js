@@ -28,6 +28,5 @@ function addCards(res) {
         </div>   
         `;
     });
-    console.log("template RUN")
     return listCard
 }
