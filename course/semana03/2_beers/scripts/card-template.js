@@ -8,9 +8,9 @@ function addCards(res) {
             "medium": "./img/beer.png"
         }
         listCard += `
-        <div class="card col-3" id="card${count}" >
+        <div class="card col-3" id="card${count}" style='overflow:scroll'>
             <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-                <div class="flipper">
+                <div class="flipper" >
                     <div class="front">
                         <img class="card-img-top" src="${el.labels.medium}" alt="Card image cap">
                         <div class="card-body">

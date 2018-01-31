@@ -2,22 +2,22 @@
 var $progressDad = $('.sectionProgress');
 var $progress = $(".progress-bar");
 var $boxCard = $("#box");
-
-// ================ ACTION PAGES =============
-//Acctions Pages jQuery
+var $inputSaercher = $('input')
 var URLQ = 'http://quiet-inlet-67115.herokuapp.com/api/search/all?q=';
 var URLID = 'https://quiet-inlet-67115.herokuapp.com/api/beer/';
+// ================ ACTION PAGES =============
+//Acctions Pages jQuery
 
 $('form').submit(function (e) {
     e.preventDefault();
-    var query = $('input').val();
-    console.log(query)
+    var query = $inputSaercher.val();
+    //put Loader progress in defauld style
     $progress.css({"width": "0"});
+
     initLoader();
 
     getApiBeer(URLQ + query, function (err, res) {
-        //do empty input searcher
-        $('input').val("");
+        $inputSaercher.val("");
         if (err) return errorRequest(err)
         //When CallBack succes then execute ...
         endLoader(res)
@@ -43,8 +43,6 @@ function endLoader(res) {
             // and print all cards.
             $boxCard.html(addCards(res));
         }, 1000)
-
-
     });
 }
 

@@ -38,8 +38,8 @@ html {
 
 .jumbotron {
   min-height: 200px !important;
-  padding: 2rem 1rem 1rem 4rem !important;
-  margin: 2em !important; }
+  padding: 2rem 1rem 1rem 1rem !important;
+  margin: 2em 25em 2em !important; }
 
 .flip-container {
   -webkit-perspective: 1000;

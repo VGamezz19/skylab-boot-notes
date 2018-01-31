@@ -1,6 +1,3 @@
-//URLS
-
-
 //HTTP REQUEST
 function getApiBeer(URL, callback) {
 	var xhr = new XMLHttpRequest();
