@@ -31,8 +31,11 @@ var num;
         numbObj.div = function (inputNum) {
             return num(div(_num, inputNum));
         }
+        numbObj.toPrimitive = function (){
+            return this + 0
+        }
         return numbObj;
     }
 })();
 
-num(5).sum(10);
+num(5).sum(10).toPrimitive();

@@ -1,0 +1,34 @@
+//Template Card
+function addCards(res) {
+    var listCard = '';
+    var count = 0;
+    res.forEach(function (el) {
+        count++;
+        if (el.labels === undefined) el.labels = {
+            "medium": "./img/beer.png"
+        }
+        listCard += `
+        <div class="card col-3" id="card${count}" >
+            <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front">
+                        <img class="card-img-top" src="${el.labels.medium}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">${el.name}</h5>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <h1>${el.name}</h1>
+                        <h5>${el.shortName !== undefined ? el.shortName : ""}</h5>
+                        <div class="card-body">
+                            <span>${el.description !== undefined ? el.description : "no descriptcion found"}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>   
+        `;
+    });
+    console.log("template RUN")
+    return listCard
+}
