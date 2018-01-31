@@ -16,6 +16,8 @@ $('form').submit(function (e) {
     initLoader();
 
     getApiBeer(URLQ + query, function (err, res) {
+        //do empty input searcher
+        $('input').val("");
         if (err) return errorRequest(err)
         //When CallBack succes then execute ...
         endLoader(res)
@@ -48,5 +50,7 @@ function endLoader(res) {
 
 function errorRequest() {
     $progress.addClass("bg-danger");
+    $boxCard.html("");
+    $boxCard.html('<section><img src="img/error.gif" alt=""> <h1><b>404</b> Not Found</h1></section>');
     throw new Error("The searcher didn't found nothing")
 }

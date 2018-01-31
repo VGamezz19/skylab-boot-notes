@@ -19,7 +19,6 @@ function addCards(res) {
                     </div>
                     <div class="back">
                         <h1>${el.name}</h1>
-                        <h5>${el.shortName !== undefined ? el.shortName : ""}</h5>
                         <div class="card-body">
                             <span>${el.description !== undefined ? el.description : "no descriptcion found"}</span>
                         </div>

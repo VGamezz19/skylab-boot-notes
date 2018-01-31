@@ -23,11 +23,15 @@ html {
 #box {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  justify-content: center !important; }
   #box div .card-body h5 {
     text-align: center; }
   #box div .card-body a {
     width: 100%; }
+  #box section {
+    align-items: center;
+    display: flex; }
 
 .back h5 {
   margin-top: 2em; }
