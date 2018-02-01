@@ -5,3 +5,6 @@
 
 ## [Semana02](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana02) - HTML - CSS - FlexBox - GridCSS - SASS - Jquery
 ### 22-01-2018
+
+## [Semana03](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana03) - Bootstrap - API - ES6 - Spotify
+### 29-01-2018
