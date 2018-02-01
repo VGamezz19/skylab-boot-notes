@@ -5,13 +5,14 @@ var $mainBox = $('#box');
 var $albumBox = $('#albumBox')
 var $document = $(document);
 
+//Action PAGE
 $form.submit(function (e) {
     e.preventDefault();
     var queryInputed = $input.val();
     var typeSelected = 'artist';
     var timeoutDefauld = 3000;
 
-    if (queryInputed === '') throw new Error("Empty search")
+    if (queryInputed === '') return console.error("Empty search")
 
     clearContent();
     getArtistFromAPI(queryInputed, typeSelected, timeoutDefauld);
@@ -19,9 +20,10 @@ $form.submit(function (e) {
     goToPosition("#box")
 });
 
+//API-CLIENT
 function getArtistFromAPI(query, type, timeout) {
     spotiApi.getArtists(query, type, function (err, res) {
-        if (err) throw new Error("err -->", err);
+        if (err) return console.error("err -->", err);
         $mainBox.html(addArtistTemplate(res.artists.items))
         $mainBox.addClass("jumbotron")
 
@@ -41,7 +43,8 @@ function addEventsClickOnCardsArtist(timeout) {
 
 function getAlbumsFromIdArtist(id, timeout) {
     spotiApi.getAlbums(id, function (err, res) {
-        if (err) throw new Error("err -->", err);
+        if (err) return console.error("err -->", err);
+
         $albumBox.html(addAlbumTemplate(res.items));
         $albumBox.addClass("jumbotron");
 
@@ -58,8 +61,11 @@ function addEventClickAlbumArtist(timeout) {
 
 function getAllTraksFromAlbum(id, timeout) {
     spotiApi.getTraks(id, function (err, res) {
-        if (err) throw new Error("err -->", err);
+        if (err) return console.error("err -->", err);
+
         $('#modal').html(addTraksTemplate(res.items));
+
+        //show modal create in template/traks-template.js
         $('.modal-trak').modal('show')
     }, timeout)
 }
@@ -78,7 +84,7 @@ function goToPosition(divid) {
     }, 'slow');
 }
 
-$('button').on('click', function(){
+$('button').on('click', function () {
     goToPosition($input)
     $('button').addClass('hidden')
 })
