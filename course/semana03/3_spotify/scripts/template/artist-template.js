@@ -3,7 +3,6 @@ function addArtistTemplate(res) {
     var listArtistTemplate = '';
     var count = 0;
     res.forEach(function (el) {
-        console.log(el)
         if (!el.images.length) el.images = [{
             "url": "somthing"
         }, {
@@ -11,7 +10,7 @@ function addArtistTemplate(res) {
         }]
         count++;
         listArtistTemplate += `
-        <div class="card col-3" id="${el.id}">
+        <div class="card card-artist col-3" id="${el.id}">
             <img class="card-img-top" src="${ el.images[1].url }" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">${el.name}</h5>

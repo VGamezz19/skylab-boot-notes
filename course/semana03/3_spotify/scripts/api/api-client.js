@@ -20,10 +20,9 @@ var spotiApi;
 
 	spotiApi = {
 		baseURL: "https://api.spotify.com/v1/",
-		headers: new Headers({
-			'Content-Type': 'application/json'
-		}),
-		token: "BQBzq7Gzq8jmRSJThDrybjME71IZ2teqYv1WaT5zFxHzq_4_XyC9ruTjPvps9TIOqQK9S18Ois0yPfHpkywpA20rzotFt3tuGUifs0VzTbDRWxHvQVwY8JK1g3RePf4WkS0HixNSg5irC2GnszPtWcgm-MCCFwuKZpE3bQ",
+
+		token: "BQB0KtRComnivsc_8k51xrPa78e9z_xj3Zb5DvERgttF0R7PBsHzW-1MhxFdY6ZZw3P9XGLe5MFqpN2op7bRsbF7itqwXGb2McTj-AXAxIfsDeovHMTr13qLw7IeMFgIVQV2zajApKMoWksdFCV2jwCj3CQQ2ApPts6SBA",
+		
 		call: function (_PATH, _callbackCall, _timeToBreak) {
 			httpReq.onreadystatechange = function () {
 				if (this.readyState === DONE) {
@@ -40,9 +39,9 @@ var spotiApi;
 
 			httpReq.open('GET', this.baseURL + _PATH);
 			httpReq.setRequestHeader('Authorization', 'Bearer ' + this.token);
-
-			timeoutCache = timeoutPetition(_timeToBreak, _callbackCall)
 			httpReq.send();
+
+			timeoutCache = timeoutPetition(_timeToBreak, _callbackCall)	
 		},
 
 		getArtists: function (query, type, callback, timeRequest) {

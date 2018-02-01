@@ -30,7 +30,7 @@ function getArtistFromAPI(query, type, timeout) {
 }
 
 function addEventsClickOnCardsArtist(timeout) {
-    return $document.on('click', '.card', function (e) {
+    return $document.on('click', '.card-artist', function (e) {
         var id = $(this).attr("id");
         getAlbumsFromIdArtist(id, timeout);
 
@@ -58,16 +58,12 @@ function addEventClickAlbumArtist(timeout) {
 function getAllTraksFromAlbum(id, timeout) {
     spotiApi.getTraks(id, function (err, res) {
         if (err) throw new Error("err -->", err);
-        console.log("TRAKS", res)
         $('#modal').html(addTraksTemplate(res.items));
         $('.modal-trak').modal('show')
     }, timeout)
 }
 
-
-
-//Content HTML
-
+//Functions Content jQuery
 function clearContent() {
     $albumBox.html("")
     $albumBox.removeClass("jumbotron")

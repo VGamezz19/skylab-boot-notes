@@ -3,7 +3,6 @@ function addAlbumTemplate(res) {
     var listAlbumTemplate = '';
     var count = 0;
     res.forEach(function (el) {
-        console.log(el)
         if (!el.images.length) el.images = [{
             "url": "somthing"
         }, {
