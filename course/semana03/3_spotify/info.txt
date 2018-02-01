@@ -1,5 +1,4 @@
 Aqui podras refrescar el TOKEN
-
 https://developer.spotify.com/web-api/console/get-search-item/
 
 Para poder hacer peticiones a Spotify, primero tendras que generarte un TOKEN.

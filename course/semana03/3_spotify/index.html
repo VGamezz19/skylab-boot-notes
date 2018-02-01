@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Beer App</title>
+    <title>SpotifySky</title>
     <link rel="stylesheet" href="vendor/bootstrap/4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
     <link rel="stylesheet" href="styles/main.css">
@@ -13,14 +13,43 @@
 
 <body>
     <main class="container-fluid">
-        
+        <div class="jumbotron">
+            <form action="" method="get">
+                <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Large</span>
+                    </div>
+                    <input type="text" class="form-control" id="inputSearch" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
+                </div>
+                <select id='selectSearch' class="custom-select custom-select-lg mb-3">
+                    <option value='artist' selected>Artist</option>
+                    <option value="album">Album</option>
+                    <option value="traks">Taks</option>
+                </select>
+            </form>
+        </div>
+        <div class="jumbotron">
+            <div id="box">
+
+            </div>
+        </div>
+        <div class="jumbotron">
+            <div id="albumBox">
+
+            </div>
+        </div>
+        <div id="modal">
+            
+        </div>
     </main>
 
     <script src="vendor/jquery/3.3.1/jquery.min.js"></script>
     <script src="vendor/popper/1.2/popper.min.js"></script>
     <script src="vendor/bootstrap/4.0/js/bootstrap.min.js"></script>
-    <script src="scripts/api-client.js"></script>
-    <script src="scripts/card-template.js"></script>
+    <script src="scripts/api/api-client.js"></script>
+    <script src="scripts/template/artist-template.js"></script>
+    <script src="scripts/template/album-template.js"></script>
+    <script src="scripts/template/traks-template.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 

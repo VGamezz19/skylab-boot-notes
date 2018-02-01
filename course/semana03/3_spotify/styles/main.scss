@@ -1,0 +1,46 @@
+body {
+    background-color: #334c0169;
+}
+
+#selectSearch {
+    margin-bottom: 0 !important;
+    margin-top: 1em;
+}
+
+.jumbotron {
+    margin: 3em 20em 1em 20em;
+    padding: 2em;
+    width: auto;
+}
+
+#box, #albumBox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center !important;
+    .card {
+        padding: 0 !important;
+        min-height: 250px;
+        max-height: 350px;
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+        .card-body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            h5 {
+                text-align: center;
+            }
+            a {
+                width: 100%;
+            }
+        }
+    }
+    section {
+        align-items: center;
+        display: flex;
+    }
+}
