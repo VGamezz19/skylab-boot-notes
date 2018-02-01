@@ -8,21 +8,22 @@ var $document = $(document);
 $form.submit(function (e) {
     e.preventDefault();
     var queryInputed = $input.val();
-    var typeSelected = $select.val();
+    var typeSelected = 'artist';
     var timeoutDefauld = 3000;
 
     if (queryInputed === '') throw new Error("Empty search")
 
     clearContent();
-    if (typeSelected === "artist") {
-        getArtistFromAPI(queryInputed, typeSelected, timeoutDefauld);
-    }
+    getArtistFromAPI(queryInputed, typeSelected, timeoutDefauld);
+
+    goToPosition("#box")
 });
 
 function getArtistFromAPI(query, type, timeout) {
     spotiApi.getArtists(query, type, function (err, res) {
         if (err) throw new Error("err -->", err);
         $mainBox.html(addArtistTemplate(res.artists.items))
+        $mainBox.addClass("jumbotron")
 
         addEventsClickOnCardsArtist(timeout);
     }, timeout);
@@ -30,22 +31,25 @@ function getArtistFromAPI(query, type, timeout) {
 
 function addEventsClickOnCardsArtist(timeout) {
     return $document.on('click', '.card', function (e) {
-        var id = $(this).attr("id")
-        getAlbumsFromIdArtist(id, timeout)
+        var id = $(this).attr("id");
+        getAlbumsFromIdArtist(id, timeout);
+
+        goToPosition("#albumBox");
     })
 }
 
 function getAlbumsFromIdArtist(id, timeout) {
     spotiApi.getAlbums(id, function (err, res) {
         if (err) throw new Error("err -->", err);
-        $albumBox.html(addAlbumTemplate(res.items))
+        $albumBox.html(addAlbumTemplate(res.items));
+        $albumBox.addClass("jumbotron");
+
         addEventClickAlbumArtist(timeout);
     }, timeout)
 }
 
 function addEventClickAlbumArtist(timeout) {
     return $document.on('click', '.album-card', function (e) {
-        console.log("albumClick")
         var id = $(this).attr("id")
         getAllTraksFromAlbum(id, timeout)
     })
@@ -57,8 +61,6 @@ function getAllTraksFromAlbum(id, timeout) {
         console.log("TRAKS", res)
         $('#modal').html(addTraksTemplate(res.items));
         $('.modal-trak').modal('show')
-        
-
     }, timeout)
 }
 
@@ -68,5 +70,13 @@ function getAllTraksFromAlbum(id, timeout) {
 
 function clearContent() {
     $albumBox.html("")
+    $albumBox.removeClass("jumbotron")
     $mainBox.html("")
+    $mainBox.removeClass("jumbotron")
+}
+
+function goToPosition(divid) {
+    $('html, body').animate({
+        scrollTop: $(divid).position().top - 50
+    }, 'slow');
 }

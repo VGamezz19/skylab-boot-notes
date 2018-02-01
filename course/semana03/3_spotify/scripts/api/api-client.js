@@ -23,7 +23,7 @@ var spotiApi;
 		headers: new Headers({
 			'Content-Type': 'application/json'
 		}),
-		token: "BQDyhGSsjIF8mviH7t_lfF3r_tf0vjbNI7QE7N6dWagou6S2szFlUALvIIG0-kyppFo56f1ct6GZ4qc97k7kgfIn2gyP_ASXf8u3afJEc9oHuojzVBo1kwCma0lRDw05SFwxgKBpHiyJ0jFjmgK8k6W2D57b__VzA5LWLA",
+		token: "BQBzq7Gzq8jmRSJThDrybjME71IZ2teqYv1WaT5zFxHzq_4_XyC9ruTjPvps9TIOqQK9S18Ois0yPfHpkywpA20rzotFt3tuGUifs0VzTbDRWxHvQVwY8JK1g3RePf4WkS0HixNSg5irC2GnszPtWcgm-MCCFwuKZpE3bQ",
 		call: function (_PATH, _callbackCall, _timeToBreak) {
 			httpReq.onreadystatechange = function () {
 				if (this.readyState === DONE) {
