@@ -1,6 +1,14 @@
 body {
   background-color: #334c0169; }
 
+main {
+  position: relative; }
+  main button {
+    left: 18em;
+    position: fixed;
+    top: 27em;
+    top: 27em; }
+
 header {
   display: flex;
   justify-content: center;
@@ -19,35 +27,45 @@ header {
   padding: 2em;
   width: auto; }
 
-#box, #albumBox {
+#box,
+#albumBox {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center !important; }
-  #box .card, #albumBox .card {
+  #box .card,
+  #albumBox .card {
     padding: 0 !important;
     min-height: 250px;
     max-height: 350px;
     margin-bottom: 10px;
     margin-top: 10px; }
-    #box .card img, #albumBox .card img {
+    #box .card img,
+    #albumBox .card img {
       width: 100%;
       height: auto;
       margin-bottom: 1em; }
-    #box .card .card-body, #albumBox .card .card-body {
+    #box .card .card-body,
+    #albumBox .card .card-body {
       display: flex;
       justify-content: center;
       align-items: flex-end; }
-      #box .card .card-body h5, #albumBox .card .card-body h5 {
+      #box .card .card-body h5,
+      #albumBox .card .card-body h5 {
         text-align: center; }
-      #box .card .card-body a, #albumBox .card .card-body a {
+      #box .card .card-body a,
+      #albumBox .card .card-body a {
         width: 100%; }
-  #box section, #albumBox section {
+  #box section,
+  #albumBox section {
     align-items: center;
     display: flex; }
 
 audio {
   width: 100%;
   margin-bottom: 2em; }
+
+.hidden {
+  display: none; }
 
 /*# sourceMappingURL=main.css.map */

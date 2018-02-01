@@ -35,6 +35,7 @@ function addEventsClickOnCardsArtist(timeout) {
         getAlbumsFromIdArtist(id, timeout);
 
         goToPosition("#albumBox");
+        $('button').removeClass('hidden')
     })
 }
 
@@ -76,3 +77,8 @@ function goToPosition(divid) {
         scrollTop: $(divid).position().top - 50
     }, 'slow');
 }
+
+$('button').on('click', function(){
+    goToPosition($input)
+    $('button').addClass('hidden')
+})
