@@ -17,7 +17,7 @@ class HangPredator {
     try (string) {
         if (string && isNaN(string)) {
             if (this.attemps <= 0) {
-                this.status = 'end';
+                this.status = false;
                 return this.getStatus()
             }
             return string.length > 1 ? this.inputedWord(string.toLowerCase()) : this.inputedLetter(string.toLowerCase())
@@ -28,27 +28,25 @@ class HangPredator {
     inputedWord(_word) {
         this.attemps = 0
         if (_word === this.word) {
-            this.status = 'correct'
+            this.status = true
+            _word.split("").map(el => this.correctLetters.push(el))
             return this.getStatus()
         }
-        this.status = 'wrong'
+        this.status = false
         return this.getStatus()
     }
     inputedLetter(_letter) {
-        console.log(_letter)
         if (this.word.includes(_letter)) {
             this.correctLetters.push(_letter)
-            this.status = 'correct'
+            this.status = true
             return this.getStatus()
         }
 
         this.attemps--;
-        this.status = 'wrong'
+        this.status = false
         return this.getStatus()
     }
     print() {
         return this.word.split("").map(el => (this.correctLetters.includes(el)) ? el : "_").join(" ")
     }
 }
-
-var game = new HangPredator("Word");
