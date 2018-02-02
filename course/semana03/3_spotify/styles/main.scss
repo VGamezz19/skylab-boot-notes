@@ -5,10 +5,9 @@ body {
 main {
     position: relative;
     button {
-        left: 18em;
+        left: 0em;
         position: fixed;
-        top: 27em;
-        top: 27em;
+        top: 28px;
     }
 }
 
@@ -17,8 +16,8 @@ header {
     justify-content: center;
     align-items: center;
     img {
-        width: 60%;
-        height: 250px;
+        max-width: 100%;
+        height: auto;
         margin: 1em;
     }
 }
@@ -34,18 +33,14 @@ header {
     width: auto;
 }
 
+.card-columns {
+    display: inline-block !important;
+}
+
 #box,
 #albumBox {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center !important;
+   
     .card {
-        padding: 0 !important;
-        min-height: 250px;
-        max-height: 350px;
-        margin-bottom: 10px;
-        margin-top: 10px;
         img {
             width: 100%;
             height: auto;
@@ -76,4 +71,8 @@ audio {
 
 .hidden {
     display: none;
+}
+
+#albumBox {
+    margin-top: 5em;
 }

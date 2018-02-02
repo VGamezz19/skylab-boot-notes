@@ -4,9 +4,10 @@ body {
 main {
   position: relative; }
   main button {
-    left: 0em;
+    left: 18em;
     position: fixed;
-    top: 28px; }
+    top: 27em;
+    top: 27em; }
 
 header {
   display: flex;
