@@ -6,7 +6,7 @@ main {
   main button {
     left: 0em;
     position: fixed;
-    top: 28px; }
+    top: 0em; }
 
 header {
   display: flex;
@@ -15,6 +15,7 @@ header {
   header img {
     max-width: 100%;
     height: auto;
+    padding: 1em;
     margin: 1em; }
 
 #selectSearch {
@@ -59,5 +60,11 @@ audio {
 
 #albumBox {
   margin-top: 5em; }
+
+.modal-header button {
+  position: absolute;
+  top: 0.7em; }
+.modal-header h5 {
+  margin-left: 2em; }
 
 /*# sourceMappingURL=main.css.map */

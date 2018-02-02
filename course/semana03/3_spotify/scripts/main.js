@@ -84,5 +84,6 @@ function goToPosition(divid) {
 
 $('button').on('click', function () {
     goToPosition($input)
+    $albumBox.addClass("hidden")
     $('button').addClass('hidden')
 })

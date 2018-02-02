@@ -7,7 +7,7 @@ main {
     button {
         left: 0em;
         position: fixed;
-        top: 28px;
+        top: 0em;
     }
 }
 
@@ -18,6 +18,7 @@ header {
     img {
         max-width: 100%;
         height: auto;
+        padding: 1em;
         margin: 1em;
     }
 }
@@ -39,7 +40,6 @@ header {
 
 #box,
 #albumBox {
-   
     .card {
         img {
             width: 100%;
@@ -75,4 +75,14 @@ audio {
 
 #albumBox {
     margin-top: 5em;
+}
+
+.modal-header {
+    button {
+        position: absolute;
+        top: 0.7em;
+    }
+    h5 {
+        margin-left: 2em;
+    }
 }

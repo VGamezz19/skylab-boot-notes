@@ -10,7 +10,7 @@ function addArtistTemplate(res) {
         }]
 
         listArtistTemplate += `
-        <div class="card card-artist " id="${el.id}">
+        <div class="card card-artist "  data-depth="-0.6" id="${el.id}">
             <img class="card-img-top" src="${ el.images[1].url }" alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">${el.name}</h5>
