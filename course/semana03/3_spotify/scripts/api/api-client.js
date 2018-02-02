@@ -21,7 +21,7 @@ var spotiApi;
 	spotiApi = {
 		baseURL: "https://api.spotify.com/v1/",
 
-		token: "BQB0KtRComnivsc_8k51xrPa78e9z_xj3Zb5DvERgttF0R7PBsHzW-1MhxFdY6ZZw3P9XGLe5MFqpN2op7bRsbF7itqwXGb2McTj-AXAxIfsDeovHMTr13qLw7IeMFgIVQV2zajApKMoWksdFCV2jwCj3CQQ2ApPts6SBA",
+		token: "BQCGxnnrLO4klrFBu2olvP-obCgzjc-rbR0hhOiACi0iEf7upow0VB7grXkG-TNYwO_S6q-3j8IJd_Rx7FeS05SKKi41ccmt-9oi42LL7JCLH-smRsMUGY9883zHKpDmFPPMOJ96YcIbZeZct6h5tVWzpIxog7jGZm3i9A",
 		
 		call: function (_PATH, _callbackCall, _timeToBreak) {
 			httpReq.onreadystatechange = function () {
