@@ -31,29 +31,30 @@ function whenExecInGameSubmit(e) {
     if (e.preventDefault) e.preventDefault();
     let inputInGame = document.getElementById('inputInGame').value
     document.getElementById('inputInGame').value = ''
-    return logicClient(gameHangmanPredator.try(inputInGame))   
+    return logicClient(gameHangmanPredator.try(inputInGame))
 }
 
 function logicClient(statusGame) {
     let $statusGameTitle = document.getElementById('myStatusTitleWord')
     console.log(statusGame)
 
-    if (statusGame.attemps === 0 && statusGame.status === 'wrong') {
+    if (statusGame.status === 'error') return console.error("Some error... you didn't input any character or input a number")
+
+    if (statusGame.attemps === 0 && statusGame.status === false) {
         animationPredatorAndAlien.instaKillPredator()
         return $noAnimateMainTemplate.innerHTML = generateEndTemplate(statusGame.status)
 
-    } else if (statusGame.word.split("").every(el=>  statusGame.correctLetters.includes(el))) {
+    } else if (statusGame.word.split("").every(el => statusGame.correctLetters.includes(el))) {
         return $noAnimateMainTemplate.innerHTML = generateEndTemplate(statusGame.status)
 
-    } else if (statusGame.status === 'correct') {
+    } else if (statusGame.status === true) {
         return $statusGameTitle.innerHTML = statusGame.attemps + ")" + statusGame.print + " 😁"
-        
-    } else if (statusGame.status === 'wrong') {
+
+    } else if (statusGame.status === false) {
         animationPredatorAndAlien.failLetterAnimation();
         return $statusGameTitle.innerHTML = statusGame.attemps + ")" + statusGame.print + " 😔"
     }
-
-    return console.error("Some Error no spected")
+    return console.error("This case didn't expected")
 }
 
 function replay() {
