@@ -1,5 +1,0 @@
-fetch("http://quiet-inlet-67115.herokuapp.com/api/search/all?q=estrella")
-.then(e => e.json())
-.then(a => setTimeout(function(a){return a},3000))
-.then(a => console.log(a))
-.catch(e => console.error(e))
