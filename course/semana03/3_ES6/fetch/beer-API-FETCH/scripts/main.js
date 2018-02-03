@@ -14,14 +14,7 @@ $('form').submit(function (e) {
     //put Loader progress in defauld style
     $progress.css({"width": "0"});
 
-    initLoader();
-
-    getApiBeer(URLQ + query, function (err, res) {
-        $inputSaercher.val("");
-        if (err) return errorRequest(err)
-        //When CallBack succes then execute ...
-        endLoader(res)
-    });
+    getApiBeerTest.call(errorRequest, URLQ + query, initLoader, endLoader)
 });
 
 //StartLoadAnimation
@@ -46,9 +39,11 @@ function endLoader(res) {
     });
 }
 
+
 function errorRequest() {
     $progress.addClass("bg-danger");
     $boxCard.html("");
     $boxCard.html('<section><img src="img/error.gif" alt=""> <h1><b>404</b> Not Found</h1></section>');
     throw new Error("The searcher didn't found nothing")
 }
+

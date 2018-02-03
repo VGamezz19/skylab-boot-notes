@@ -155,5 +155,3 @@ cat1.eat() //"ñam ñam"
 cat1.mew() //"mew"
 cat1.name //"minino"
 ```
-
-
