@@ -130,7 +130,7 @@ Ejemplos:
 
 ## [Class](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes)
 
-```javascript
+```javascript 
 class Animal {
     constructor(name){
         this.name = name;
