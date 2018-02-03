@@ -9,6 +9,10 @@ Bootstrap y Materialize son frameworks de estilo, que te ayudaran a cuadrar y es
 
 Como estructurar una API y que significa
 
-## [ES6 - Fetch - Promise](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana03/readme/ES6.MD)
+## [ES6](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana03/readme/ES6.MD)
 
-Como estructurar una API y que significa
+Curiosidades y mejoras de JavaScript
+
+## [Fetch - Promise](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana03/readme/PROMISE.MD)
+
+ Peticiones XMLHttp Asyncronas (**Fetch**) y la introduccion a las Promise.
