@@ -50,7 +50,7 @@ Private Class --> Symbol()
 
 
 
-//PROMISE
+//PROMISE --> mirar capeta FETCH de upstream/develop
 
 En el punto THEN solo podra pasar al siguiente se le pasamos OTRA PROMISE.
 
