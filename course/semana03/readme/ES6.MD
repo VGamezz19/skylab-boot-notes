@@ -128,7 +128,7 @@ Ejemplos:
     fun(1,2,3,4,5,6)
 ```
 
-## [Spread Operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes)
+## [Class](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Classes)
 
 ```javascript
 class Animal {
