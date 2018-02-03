@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/)   ES6
+## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana03/)   ES6
 
 ## [Enjanced Object Literals](http://www.benmvp.com/learning-es6-enhanced-object-literals/)
 

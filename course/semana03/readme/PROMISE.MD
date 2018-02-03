@@ -1,11 +1,47 @@
 
-//PROMISE --> mirar capeta FETCH de upstream/develop
+## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana03/)   Fetch - Promise
 
-En el punto THEN solo podra pasar al siguiente se le pasamos OTRA PROMISE.
 
-new Promise -> (resolve, reject) {
-    setTimeout(()=> console.log("Run me async"),1000)
-}
+### [Fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
 
-//puedes concatenar THEN de strings y numbers. pero si rompes el then con alguna otra funcion ya no.
-a no ser que esa funcion devuelva otra promise.
+Fetch Ejecutara una peticion a un servidor mediante una URL de forma asincrona.
+Para controlar el flujo de esa ejecucion, es necesario el uso de `then`.
+`then` tratara el dato que se le es retornado. por ejemplo, en esta peticion:
+```javascript
+
+const headers = { Authorization: 'Bearer ' + token }
+fetch(url, { headers })
+    .then(res => {
+        return res.json()
+    })
+    .then(data => {
+        console.log(data)
+    })
+    .catch(err => console.error('Error:', err))
+```
+En el primer `then` se puede ver que estamos pasando a formato `json` los datos devueltos de la peticion `XMLHttpRequest`
+y en el segundo `then` mostramos esos datos ya convertidos en `json` por consola.
+
+es **Importante** remarcar que para seguir concatenado `then`s, en el anterior `then` has de retornar una **Promise**
+
+
+### Promise
+
+![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana03/public/promise.png)
+
+Ejemplos:
+
+```javascript 
+const concat = new Promise((resolve, reject) => {
+        console.log("init-loader") 
+        resolve("a")
+    })
+    .then(res => res + 'b') //ab
+    .then(res => res + 'c') //abc
+    .then(res => res + 'd') //abcd
+    .then(res => console.log(res)) // return --> abcd
+    .finally(res => console.log("finish-loader")) 
+    .catch(err => console.error(err))
+```
+
+`.finally()` Ejecutara  el código indicado cuando el estadado de la `promise` sea “reolved”.
