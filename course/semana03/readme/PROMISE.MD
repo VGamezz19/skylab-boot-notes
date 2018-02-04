@@ -24,6 +24,8 @@ y en el segundo `then` mostramos esos datos ya convertidos en `json` por consola
 
 es **Importante** remarcar que para seguir concatenado `then`s, en el anterior `then` has de retornar una **Promise**
 
+para poder añadirle **timeout** mirar este [link](https://davidwalsh.name/fetch-timeout)
+
 
 ### Promise
 

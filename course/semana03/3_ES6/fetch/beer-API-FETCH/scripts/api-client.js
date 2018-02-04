@@ -23,23 +23,37 @@
 // 	}, 3000)
 // 	xhr.send(null);
 //}
+// var URLQ = 'http://quiet-inlet-67115.herokuapp.com/api/search/all?q=';
+// var URLID = 'https://quiet-inlet-67115.herokuapp.com/api/beer/';
+const FETCH_TIMEOUT = 3000
 
+const getApiBeer = {
+	urlBase: 'http://quiet-inlet-67115.herokuapp.com/api/search/all?q=',
 
-var getApiBeerTest = {
-	call(errorRequest = () => console.error("some Erro"), url, callInit = () => undefined, callBack = () => undefined) {
-
-		if (!url) console.error("Error, getApiBeer.call() <-- need URL")
-
+	call(errorRequest, path, callInit) {
 		callInit()
-		fetch(url, {
-				method: 'GET',
-				timeout: 2000
+
+		return new Promise(function (resolve, reject) {
+				const timeout = setTimeout(function () {
+					reject(new Error('Request timed out'));
+				}, FETCH_TIMEOUT);
+
+				fetch(path)
+					.then(res => {
+						clearTimeout(timeout);
+						return resolve(res);
+					})
+					.catch(function (err) {
+						reject(err);
+					})
 			})
 			.then(res => res.json())
-			.then((res) => {
-				callBack(res)
-				return res
-			})
 			.catch(err => errorRequest())
+	},
+	getSearch(reject = () => console.error("some Erro"), query, initReq = () => undefined) {
+		let path = this.urlBase + query
+		if (!query) return console.error("Error, getApiBeer.getSearch() <-- need URL")
+
+		return this.call(reject, path, initReq)
 	}
 }

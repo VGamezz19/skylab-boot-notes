@@ -3,8 +3,7 @@ var $progressDad = $('.sectionProgress');
 var $progress = $(".progress-bar");
 var $boxCard = $("#box");
 var $inputSaercher = $('input')
-var URLQ = 'http://quiet-inlet-67115.herokuapp.com/api/search/all?q=';
-var URLID = 'https://quiet-inlet-67115.herokuapp.com/api/beer/';
+
 // ================ ACTION PAGES =============
 //Acctions Pages jQuery
 
@@ -14,8 +13,10 @@ $('form').submit(function (e) {
     //put Loader progress in defauld style
     $progress.css({"width": "0"});
 
-    getApiBeerTest.call(errorRequest, URLQ + query, initLoader, endLoader)
+    getApiBeer.getSearch(errorRequest, query, initLoader)
+    .then(res => endLoader(res))
 });
+
 
 //StartLoadAnimation
 function initLoader() {
