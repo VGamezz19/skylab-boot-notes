@@ -25,6 +25,4 @@ $('form').submit(e => {
             animationLoader.errorLoader()
             return console.error("some error in search -->", err)
         })
-
-
 });
