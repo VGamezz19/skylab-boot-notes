@@ -1,5 +1,5 @@
 
-## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana03/)   Fetch - Promise
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/)   Fetch - Promise
 
 
 ### [Fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
@@ -27,7 +27,7 @@ es **Importante** remarcar que para seguir concatenado `then`s, en el anterior `
 
 ### Promise
 
-![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana03/public/promise.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/public/promise.png)
 
 Ejemplos:
 

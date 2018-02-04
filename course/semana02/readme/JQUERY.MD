@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/)   jQuery
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/)   jQuery
 
 jQuery es una libreria basada en el `DOM` y la seleccion de elemento de `JS`. 
 Usa el caracter `$` para efectuar una serie de concatenaciones.

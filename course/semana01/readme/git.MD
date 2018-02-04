@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana01/)   GIT
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana01/)   GIT
 
 Nunca trabajaremos directamente sobre la rama `Master`, siempre tendremos que trabajar sobre una rama temporal paralela (dev/develop)
 ```
@@ -26,7 +26,7 @@ y finalmente, pushear el merge.
 
 **Fork** Es la forma de clonarte el repositorio de un `frameWork`, `libreria`, `modulo`, etc. Añadir alguna sugerencia/issue (problemas) y hacer un `pull request`
 
-![Image](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana01/public/fork.jpg)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana01/public/fork.jpg)
 
 Voy a describir los pasos para hacer un `fork` y un `pull request` basandome en la imagen anterior:
 

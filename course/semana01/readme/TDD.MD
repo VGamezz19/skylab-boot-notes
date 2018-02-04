@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana01/)  TDD
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana01/)  TDD
 
 Actualmente, es una de las cosas más importante de la programacion, definir test antes de programar.
 

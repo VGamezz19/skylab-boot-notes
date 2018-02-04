@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana03/)   Bootstrap + Materialize
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/)   Bootstrap + Materialize
 
 Estan trabajando en un Bootstrap que no dependa de Jquery! actualmente el framework Bootstrap4 esta muy bien, mucho mejor que el 3.
 

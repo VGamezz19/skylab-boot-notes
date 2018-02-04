@@ -26,12 +26,15 @@
 
 
 var getApiBeerTest = {
-	call(errorRequest = () => console.error("some Erro"),url, callInit = () => undefined, callBack = () => undefined) {
+	call(errorRequest = () => console.error("some Erro"), url, callInit = () => undefined, callBack = () => undefined) {
 
 		if (!url) console.error("Error, getApiBeer.call() <-- need URL")
 
 		callInit()
-		fetch(url,{method: 'GET', timeout: 2000})
+		fetch(url, {
+				method: 'GET',
+				timeout: 2000
+			})
 			.then(res => res.json())
 			.then((res) => {
 				callBack(res)

@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/)   HTML
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/)   HTML
 
 Es muy importante tener en cuenta una serie de atrivutos en tu HTML para que el SEO y el Renderizado de tu pagina pueda funcionar correctamente en los navegadores.
 
@@ -12,7 +12,7 @@ al pulsar este link, llamara directamente.
     -  Nav
     -  main
 
-    ![Imagen](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/etiquetasMain.png)
+    ![Imagen](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/etiquetasMain.png)
 
 -   Etiquestas de estructura
     - Section (remplaza a Div)
@@ -21,4 +21,4 @@ al pulsar este link, llamara directamente.
     - p (add content in block)
     - span (add content in line)
 
-    ![Imagen](https://github.com/VGamezz19/skylab-curso/blob/dev/course/semana02/public/etiquetaEstructura.png)
+    ![Imagen](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/etiquetaEstructura.png)
