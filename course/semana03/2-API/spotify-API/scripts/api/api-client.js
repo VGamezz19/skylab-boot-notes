@@ -14,10 +14,6 @@ var spotiApi;
 		}, time)
 	}
 
-	function clearAbort(timeout) {
-		return clearTimeout(timeout)
-	}
-
 	spotiApi = {
 		baseURL: "https://api.spotify.com/v1/",
 
@@ -27,10 +23,10 @@ var spotiApi;
 			httpReq.onreadystatechange = function () {
 				if (this.readyState === DONE) {
 					if (this.status === OK) {
-						clearAbort(timeoutCache)
+						clearTimeout(timeoutCache)
 						return _callbackCall(null, JSON.parse(this.responseText))
 					} else {
-						clearAbort(timeoutCache)
+						clearTimeout(timeoutCache)
 
 						return _callbackCall(new Error(this.status + "Error en la peticion httpRequest/AJAX"))
 					}
