@@ -1,7 +1,7 @@
 //Template Card
 function addCards(res) {
-    var listCard = '';
-    var count = 0;
+    let listCard = '';
+    let count = 0;
     res.forEach(function (el) {
         count++;
         if (el.labels === undefined) el.labels = {
