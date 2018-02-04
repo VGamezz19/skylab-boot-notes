@@ -10,29 +10,31 @@ $form.submit(function (e) {
     e.preventDefault();
     var queryInputed = $input.val();
     var typeSelected = 'artist';
-    var timeoutDefauld = 3000;
 
     if (queryInputed === '') return console.error("Empty search")
 
     clearContent();
-    getArtistFromAPI(queryInputed, typeSelected, timeoutDefauld);
+    getArtistFromAPI(queryInputed, typeSelected);
     $mainBox.removeClass('hidden')
     goToPosition("#box")
 });
 
 //API-CLIENT
-function getArtistFromAPI(query, type, timeout) {
-    spotiApi.getArtists(query, type, function (err, res) {
-        if (err) return console.error("err -->", err);
-        $mainBox.html(addArtistTemplate(res.artists.items))
-        addEventsClickOnCardsArtist(timeout);
-    }, timeout);
+function getArtistFromAPI(query, type) {
+    spotiApi.getArtists(query, type)
+    .then(res => res.artists.items)
+    .then(res => {
+        $mainBox.html(addArtistTemplate(res))
+        addEventsClickOnCardsArtist();
+    })
+    .catch(err => console.error("err -->", err))
 }
 
-function addEventsClickOnCardsArtist(timeout) {
+function addEventsClickOnCardsArtist() {
     return $document.on('click', '.card-artist', function (e) {
         var id = $(this).attr("id");
-        getAlbumsFromIdArtist(id, timeout);
+        console.log(id)
+        getAlbumsFromIdArtist(id);
 
         goToPosition("#albumBox");
         $albumBox.removeClass('hidden')
@@ -40,32 +42,33 @@ function addEventsClickOnCardsArtist(timeout) {
     })
 }
 
-function getAlbumsFromIdArtist(id, timeout) {
-    spotiApi.getAlbums(id, function (err, res) {
-        if (err) return console.error("err -->", err);
-
-        $albumBox.html(addAlbumTemplate(res.items));
-
-        addEventClickAlbumArtist(timeout);
-    }, timeout)
+function getAlbumsFromIdArtist(id) {
+    spotiApi.getAlbums(id)
+    .then(res => res.items)
+    .then(res => {
+        console.log(res)
+        $albumBox.html(addAlbumTemplate(res));
+        addEventClickAlbumArtis();
+    })
+    .catch(err => console.error("err -->", err))
 }
 
-function addEventClickAlbumArtist(timeout) {
+function addEventClickAlbumArtis() {
     return $document.on('click', '.album-card', function (e) {
         var id = $(this).attr("id")
-        getAllTraksFromAlbum(id, timeout)
+        getAllTraksFromAlbum(id)
     })
 }
 
-function getAllTraksFromAlbum(id, timeout) {
-    spotiApi.getTraks(id, function (err, res) {
-        if (err) return console.error("err -->", err);
-
-        $('#modal').html(addTraksTemplate(res.items));
-
-        //show modal create in template/traks-template.js
+function getAllTraksFromAlbum(id) {
+    spotiApi.getTraks(id)
+    .then(res => res.items)
+    .then(res => {
+        console.log(res)
+        $('#modal').html(addTraksTemplate(res))
         $('.modal-trak').modal('show')
-    }, timeout)
+    })
+    .catch(err => console.error("err -->", err))
 }
 
 //Functions Content jQuery
@@ -82,7 +85,7 @@ function goToPosition(divid) {
     }, 'slow');
 }
 
-$('button').on('click', function () {
+$('button').on('click',  () => {
     goToPosition($input)
     $albumBox.addClass("hidden")
     $('button').addClass('hidden')

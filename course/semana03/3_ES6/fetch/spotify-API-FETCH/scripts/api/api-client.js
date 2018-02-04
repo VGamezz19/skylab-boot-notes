@@ -1,63 +1,53 @@
-var spotiApi;
+const FETCH_TIMEOUT = 3000
+let spotiApi;
 
 (function () {
-	//Define Variables
-	var httpReq = new XMLHttpRequest();
-	var DONE = 4;
-	var OK = 200;
-	var timeoutCache;
-
-	function timeoutPetition(time, callback) {
-		return setTimeout(function () {
-			httpReq.abort()
-			return callback(new Error(this.status + "Error en la peticion httpRequest/AJAX"))
-		}, time)
-	}
-
-	function clearAbort(timeout) {
-		return clearTimeout(timeout)
-	}
-
 	spotiApi = {
 		baseURL: "https://api.spotify.com/v1/",
 
-		token: "BQBXNOQysgdw27h-avU-26DlIBpi0cNzAVnF4AEoHhbf9Cq-5kLSZWlneKP5vIqcd1iUIELvhZHJHf3Ly2Icnuvp5YqjIVQhThIp6Nd8oRGqJhzlMcJxE4IKx-NaS4W5d_nRh-2-52emXroQAUIOL29ZbbafWMhGwIIUIA",
-		
-		call: function (_PATH, _callbackCall, _timeToBreak) {
-			httpReq.onreadystatechange = function () {
-				if (this.readyState === DONE) {
-					if (this.status === OK) {
-						clearAbort(timeoutCache)
-						return _callbackCall(null, JSON.parse(this.responseText))
-					} else {
-						clearAbort(timeoutCache)
+		token: "BQCE_IS_xznlK4Ga4yyBewF4Mc17iWQvgTjDdZcL2XtP2udbTf_99pVfLhmh5lgtnP1sGqZ03Wtpe1VNjXTsnqryq4jPKAyAIyHMZbwo-SYDH2W676f5Lzqx1P7LK4qE9rxFwAXYoSk6XaO_r-98K5-pWE-vbnne-ycVkQ",
 
-						return _callbackCall(new Error(this.status + "Error en la peticion httpRequest/AJAX"))
-					}
-				}
+		call: function (_PATH, _header) {
+			return new Promise(function (resolve, reject) {
+					const timeout = setTimeout(function () {
+						reject(new Error('Request timed out'));
+					}, FETCH_TIMEOUT);
+
+					fetch(_PATH, _header)
+						.then(res => {
+							clearTimeout(timeout);
+							return resolve(res);
+						})
+						.catch(function (err) {
+							reject(err);
+						})
+				})
+				.then(res => res.json())
+				.catch(err => {
+					throw new Error(err)
+				})
+		},
+
+		getArtists: function (query, type) {
+			let path = this.baseURL+"search?q=" + query + "&type=" + type;
+			const header = {
+				headers: {'Authorization': 'Bearer ' + this.token}
 			}
-
-			httpReq.open('GET', this.baseURL + _PATH);
-			httpReq.setRequestHeader('Authorization', 'Bearer ' + this.token);
-			httpReq.send();
-
-			timeoutCache = timeoutPetition(_timeToBreak, _callbackCall)	
+			return this.call(path,header)
 		},
-
-		getArtists: function (query, type, callback, timeRequest) {
-			var path = "search?q=" + query + "&type=" + type;
-
-			this.call(path, callback, timeRequest)
+		getAlbums: function (id) {
+			let path = this.baseURL+'artists/' + id + "/albums";
+			const header = {
+				headers: {'Authorization': 'Bearer ' + this.token}
+			}
+			return this.call(path,header)
 		},
-		getAlbums: function (id, callback, timeRequest) {
-			var path = 'artists/' + id +"/albums";
-
-			this.call(path, callback, timeRequest)
-		},
-		getTraks: function (id, callback, timeRequest) {
-			var path = "albums/"+id+"/tracks"
-
-			this.call(path, callback, timeRequest)
+		getTraks: function (id) {
+			let path = this.baseURL+"albums/" + id + "/tracks"
+			const header = {
+				headers: {'Authorization': 'Bearer ' + this.token}
+			}
+			return this.call(path,header)
 		}
 	}
 })()
