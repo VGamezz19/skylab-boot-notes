@@ -28,6 +28,19 @@ Forma de escribir el `html` dentro de tus fichero `JS`. La **X** viene de `XML`,
 
 ### Babel
 
+React trabaja con la libreria `babel`. `babel` es un compilador de codigo que nos permitira **interpretar** los ficheros `JSX` para que el navegador pueda interpretarlo.
+
+- ¿Como se usa?
+
+Sin tener `Back-End`, inportamos la `libreria` a nuestro proyecto, y lo linkamos en nuestro `html`. despues, es necesario especificar a `babel` que archivo va ha tener que interpretar, de esta forma:
+```html
+    <script src="vendor/babel/6.26.0/babel.min.js"></script>
+    <script src="scripts/main.jsx" type="text/babel"></script>
+```
+
+⚠️ Tambien es importante remarcar, que necesitamos levantarlo desde un "mini" servidor web
+
+
 ### Caracteristicas de React
 
 Class --> ClassNmae (a la hora de añadir una class en el HTML)
