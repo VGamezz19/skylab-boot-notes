@@ -1,0 +1,11 @@
+button.round-red-button {
+    border: 1px solid red;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+input.round-blue-input {
+    border: 1px solid blue;
+    border-radius: 3px;
+    padding: 5px;
+}

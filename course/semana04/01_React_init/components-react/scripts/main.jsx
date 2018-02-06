@@ -24,6 +24,7 @@ class Calc extends React.Component { //Calc esta heredando todos los metodos de 
         this.setState({
             res: this.state.a + this.state.b
         })
+        this.setState((prevState) => console.log(prevState))
         // this.setState(prevState => {
         //     return {
         //         res: prevState.a + prevState.b
@@ -33,7 +34,6 @@ class Calc extends React.Component { //Calc esta heredando todos los metodos de 
 
     keepA = (e) => {
         let a = parseFloat(e.target.value)
-
         this.setState({a: a})
     }
 

@@ -37,7 +37,7 @@ Sin tener `Back-End`, inportamos la `libreria` a nuestro proyecto, y lo linkamos
     <script src="vendor/babel/6.26.0/babel.min.js"></script>
     <script src="scripts/main.jsx" type="text/babel"></script>
 ```
-
+x
 ⚠️ Tambien es importante remarcar, que necesitamos levantarlo desde un "mini" servidor web
 
 
@@ -53,3 +53,8 @@ un componente con Estado, necesita un Render()
 Al generar un componente extendido de React, es necesario llamar al metodo `super()` para instanciar todos los metodos de React. 
 
 //This desde el HTML --> Bind o Arrow. poruqe React le añade un "call(undefined)" ya qie sino le pasaria todo el objeto HTML
+
+//Es importante saber que el this.setState lo hace de forma asyncrona. y no es recomendable intentar capturar el evento, o poner alguna callback dentro de esa ejecucion, ya que despues de modificar ese estado, efectuara el renderizado.
+
+
+Todo conponente que almacena datos, tiene un state, y si tiene statue, estara generada con una Class.
