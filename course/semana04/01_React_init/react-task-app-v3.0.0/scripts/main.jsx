@@ -1,78 +1,104 @@
-'use strict';
-//Component Smart
+'use strict'
+
+//Smart Component Father / ClassComponent
 class TaskApp extends React.Component {
     constructor() {
         super()
         this.state = {
-            tasks: []
+            tasks: [],
+            tasksRemoved: []
         }
     }
 
     addTask = (task) => {
-        this.setState(prevState => {
+        this.setState(prevStates => ({ tasks: [...prevStates.tasks, task] }))
+    }
+
+    removeTask = (idTask) => {
+        this.setState(prevStates => {
+
             return {
-                // tasks: prevState.tasks.concat(this.state.input)
-                tasks: [...prevState.tasks, task]
+                tasksRemoved: [...prevStates.tasksRemoved, prevStates.tasks.filter((task, _id) => idTask === _id)],
+                tasks: prevStates.tasks.filter((task, _id) => idTask !== _id),
             }
         })
     }
 
-    // removeTask = index => this.setState(prevState => ({ tasks: prevState.tasks.filter((task, _index) => index !== _index) }))
-    removeTask = index => {
-        this.setState(prevState => {
-            return {
-                tasks: prevState.tasks.filter((task, _index) => {
-                    return index !== _index
-                })
-            }
-        })
+    refresList = () => {
+        this.setState({ tasksRemoved: [] })
     }
-
     render() {
-        return <div>
-            <TaskInput onAddTask={this.addTask} />
-            <TaskList tasks={this.state.tasks} onRemoveTask={this.removeTask} />
-        </div>
+        return (
+            <div>
+                <TaskInput onAddTask={this.addTask} />
+
+                {this.state.tasks.length > 0 ?
+                    <TaskList
+                        tasks={this.state.tasks}
+                        onRemoveTask={this.removeTask} /> : ``}
+
+                {this.state.tasksRemoved.length > 0 ? <TaskDeleteList
+                    tasks={this.state.tasksRemoved}
+                    onRemoveTask={this.removeTask}
+                    onRefresh={this.refresList} /> : ``}
+            </div>
+        )
     }
 }
-//Component Smart
+
+//Smart Component Child / ClassComponent
 class TaskInput extends React.Component {
     constructor() {
         super()
         this.state = {
-            input: ''
+            input: ""
         }
+    }
+
+    addTaskChild = e => {
+        e.preventDefault()
+        this.props.onAddTask(this.state.input)
+        this.setState({input: ''})
     }
 
     keepInput = e => this.setState({ input: e.target.value })
 
-    addTaskChild = () => {
-        this.props.onAddTask(this.state.input)
-        this.setState({ input: '' })
-    }
-
     render() {
-        return <form onSubmit={e => {
-                e.preventDefault()
-                this.addTaskChild()
-            }
-        }>
-            <input type="text" className="round-blue-input" placeholder="Input task" onChange={this.keepInput} value={this.state.input} />
-            &nbsp;
-            <button type="submit" className="round-red-button">Add</button>
-        </form>
+        return (
+            <form onSubmit={this.addTaskChild}>
+                <input
+                    className = 'round-blue-input'
+                    type="text"
+                    onChange={this.keepInput}
+                    value={this.state.input} />
+                <button 
+                    type="submit"
+                    className = 'round-red-button'>
+                    Enviar</button>
+            </form>
+        )
     }
 }
 
-//Component Dump
+//Idiot Component Child () /FunctionalComponent
 function TaskList(props) {
-    return <ul>
-        {props.tasks.map((task, index) => <li>{task} &nbsp; <a onClick={(e) => {
-            e.preventDefault()
-
-            props.onRemoveTask(index)
-        }}>🗑</a></li>)}
-    </ul>
+    //AddingList
+    return (<ul> {props.tasks.length > 0 ? `Your Tasks! 😁` : ``}
+        {props.tasks.map((task, index) => {
+            return <li>{task}  <a onClick={(e) => { e.preventDefault(); props.onRemoveTask(index) }}>🗑</a></li>
+        })}
+    </ul>)
+}
+////Idiot Component Child () /FunctionalComponent
+function TaskDeleteList(props) {
+    return (
+        <ul> You was remuve 🗑 ...
+        <button onClick={props.onRefresh}  className = 'round-grey-button' type="submit">Refres</button>
+            {props.tasks.map((task, index) => {
+                return <li>{task}</li>
+            })}
+        </ul>)
 }
 
+//ReactDOM GOD
 ReactDOM.render(<TaskApp />, document.getElementById('root'))
