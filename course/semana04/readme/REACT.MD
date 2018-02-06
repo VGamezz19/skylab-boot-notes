@@ -44,3 +44,12 @@ Sin tener `Back-End`, inportamos la `libreria` a nuestro proyecto, y lo linkamos
 ### Caracteristicas de React
 
 Class --> ClassNmae (a la hora de añadir una class en el HTML)
+
+
+al corfear componenetes, se nominan en UpperCammelCase `ExampleComponent(){}`
+
+un componente con Estado, necesita un Render()
+
+Al generar un componente extendido de React, es necesario llamar al metodo `super()` para instanciar todos los metodos de React. 
+
+//This desde el HTML --> Bind o Arrow. poruqe React le añade un "call(undefined)" ya qie sino le pasaria todo el objeto HTML

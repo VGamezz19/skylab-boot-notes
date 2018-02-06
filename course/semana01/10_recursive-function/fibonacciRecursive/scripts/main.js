@@ -7,7 +7,7 @@ function fibonacci(num) {
 }
 
 let contadorMemo = 1
-function fibonacciMemo(num, memoria = {}) {
+function _fibonacciMemo(num, memoria = {}) {
     contadorMemo++
     if (memoria[num]) return memoria[num]
     if (num === 0) return 0
@@ -19,3 +19,13 @@ console.log(fibonacci(20))
 console.log(fibonacciMemo(20))
 console.log("Count from countRect", contadorRect)
 console.log("Count from countMemo", contadorMemo)
+
+// let contadorMemo
+// function fibonacciMemo(num) {
+//     contadorMemo++
+    
+//     if (!fibonacci.answers) fibonacci.answers = {}
+//     console.log(fibonacci.answer)
+//     if (fibonacci.answer[num]) return fibonacci.answer[num]
+//     return num > 0 ? (num != 1 ? fibonacci.answers[num] = fibonacci(num - 1) + fibonacci(num - 2) : 1) : 0
+// }
