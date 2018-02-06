@@ -58,3 +58,9 @@ Al generar un componente extendido de React, es necesario llamar al metodo `supe
 
 
 Todo conponente que almacena datos, tiene un state, y si tiene statue, estara generada con una Class.
+
+
+Componente Smart/ Dump --> Inteligentes con responsabilidades, o que solo printan informacion.
+
+
+

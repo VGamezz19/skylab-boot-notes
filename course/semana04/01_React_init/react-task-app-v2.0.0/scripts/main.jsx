@@ -16,6 +16,7 @@ class TaskApp extends React.Component {
     addTask = e => {
         e.preventDefault()
         this.setState(prevState => {
+            console.log(prevState)
             return {
                 //tasks: prevState.tasks.concat(this.state.inoput)
                 tasks: [
