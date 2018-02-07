@@ -1,3 +1,14 @@
+class Task {
+    constructor(title) {
+        this.id = Task.count++
+        this.title = title
+        this.create = true
+        this.done = false
+    }
+
+    static count = 0;
+}
+
 class TaskInput extends React.Component {
     constructor() {
         super()
@@ -5,17 +16,19 @@ class TaskInput extends React.Component {
             input: ''
         }
     }
+
+
     keepInput = e => this.setState({ input: e.target.value })
 
     onAddTask = (e) => {
         e.preventDefault()
         if (this.state.input) {
-            let task = {
-                title: this.state.input,
-                create: true,
-                done: false
-            }
-            this.props.onAddTask(task)
+            // let task = {
+            //     title: this.state.input,
+            //     create: true,
+            //     done: false
+            // }
+            this.props.onAddTask(new Task(this.state.input))
             this.setState({ input: '' })
         }
     }

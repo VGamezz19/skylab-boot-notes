@@ -1,4 +1,4 @@
-ReactDOM.render(<div class = 'container'><TaskApp/></div> , document.getElementById('root'))
+ReactDOM.render(<TaskApp/>, document.getElementById('root'))
 
 
 

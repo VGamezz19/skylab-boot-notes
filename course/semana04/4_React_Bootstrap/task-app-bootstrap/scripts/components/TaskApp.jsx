@@ -46,16 +46,19 @@ class TaskApp extends React.Component {
 
     render() {
         return (
-            <div class='row'>
-                <Todos
-                    onAddTask={this.addTask}
-                    onDoneTask={this.doneTask}
-                    onCheckAll={this.checkAll}
-                    valueTasks={this.state.tasks} />
-                <AlreadyDone
-                    onDeleteTask={this.deleteTask}
-                    valueTasks={this.state.tasks} />
+            <div class='container'>
+                <div class='row'>
+                    <Todos
+                        onAddTask={this.addTask}
+                        onDoneTask={this.doneTask}
+                        onCheckAll={this.checkAll}
+                        valueTasks={this.state.tasks} />
+                    <AlreadyDone
+                        onDeleteTask={this.deleteTask}
+                        valueTasks={this.state.tasks} />
+                </div>
             </div>
+
         )
     }
 }

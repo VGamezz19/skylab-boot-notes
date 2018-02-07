@@ -31,7 +31,7 @@ class Todos extends React.Component {
                     <TaskList
                         onDoneTask={this.props.onDoneTask}
                         valueTasks={this.props.valueTasks} />
-                    <TaskLeft valueleftDone={() => this.leftToDone()} />
+                    <TaskLeft valueTasks={this.props.valueTasks} />
                 </div>
             </div>
         )
