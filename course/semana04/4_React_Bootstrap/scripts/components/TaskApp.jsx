@@ -46,8 +46,8 @@ class TaskApp extends React.Component {
 
     render() {
         return (
-            <div class='container'>
-                <div class='row'>
+            <div className='container'>
+                <div className='row'>
                     <Todos
                         onAddTask={this.addTask}
                         onDoneTask={this.doneTask}

@@ -1,9 +1,9 @@
 function TaskLeft(props) {
     let num = 0
     return (
-        <div class="todo-footer">
+        <div className="todo-footer">
             <strong>
-                <span class="count-todos">
+                <span className="count-todos">
                     {props.valueTasks.reduce((acum, task) => {
                         console.log("reduce", task, acum)
                         return task.done ? acum : acum += 1
