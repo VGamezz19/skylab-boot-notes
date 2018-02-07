@@ -9,14 +9,7 @@ function AlreadyDone(props) {
                             return (
                                 <li>
                                     {task.title}
-                                    <button className="remove-item btn btn-default btn-xs pull-right">
-                                        <span
-                                            onClick={(e) => {
-                                                e.preventDefault()
-                                                props.onDeleteTask(idTask)
-                                            }}
-                                            className="glyphicon glyphicon-remove" />
-                                    </button>
+                                    <XButton valueID={idTask} onAction={props.onDeleteTask} />
                                 </li>
                             )
                         }
@@ -24,5 +17,18 @@ function AlreadyDone(props) {
                 </ul>
             </div>
         </div>
+    )
+}
+
+function XButton(props) {
+    return (
+        <button
+            className="remove-item btn btn-default btn-xs pull-right"
+            onClick={(e) => {
+                e.preventDefault()
+                props.onAction(props.valueID)
+            }}>
+            <span className="glyphicon glyphicon-remove" />
+        </button>
     )
 }

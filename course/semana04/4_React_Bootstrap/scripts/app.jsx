@@ -1,1 +1,1 @@
-ReactDOM.render(<TaskApp />, document.getElementById('root'))
+ReactDOM.render(<div> <TaskApp /><TaskApp /></div> , document.getElementById('root'))
