@@ -9,13 +9,15 @@ class TaskInput extends React.Component {
 
     onAddTask = (e) => {
         e.preventDefault()
-        let task =  {
-            title: this.state.input,
-            create: true,
-            done: false
-        }
-        this.props.onAddTask(task)
-        this.setState({input: ''})
+        if(this.state.input) {
+            let task =  {
+                title: this.state.input,
+                create: true,
+                done: false
+            }
+            this.props.onAddTask(task)
+            this.setState({input: ''})
+        }     
     }
     render() {
         return (
