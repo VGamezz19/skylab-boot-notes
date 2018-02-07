@@ -61,6 +61,3 @@ Todo conponente que almacena datos, tiene un state, y si tiene statue, estara ge
 
 
 Componente Smart/ Dump --> Inteligentes con responsabilidades, o que solo printan informacion.
-
-
-
