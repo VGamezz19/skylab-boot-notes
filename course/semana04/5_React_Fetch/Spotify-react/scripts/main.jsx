@@ -17,7 +17,7 @@ class AjaxApp extends React.Component {
 
     render() {
         return <div>
-            <button onClick={this.loadMovies.bind(this)}>Load movies</button>
+            {/* <button onClick={this.loadMovies.bind(this)}>Load movies</button> */}
             <ul>
                 {
                     this.state.movies.map((movie, index) =>

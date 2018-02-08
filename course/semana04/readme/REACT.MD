@@ -67,7 +67,8 @@ Componente Smart/ Dump --> Inteligentes con responsabilidades, o que solo printa
 REACT ROUTE
 
 Fetch -->
-https://carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
+carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
 
+Solo en los componentes Smaft.
 
 ComponentDidMount -->
