@@ -1,7 +1,7 @@
 const spotiApi = {
 	baseURL: "https://api.spotify.com/v1/",
 
-	token: "BQDXOfxSyxuVS3bzm11pttORyB_Px5IRwCI9xTV2e3EnSCFfzeTXPEOqN5TckZW9J0jL79lWiR4Q-lMDOUjaSA5WqQupD42HRlc2MN6tglb-RaIn23L1X4-oc1tHBNaT8BKCSzbFByCjusG-3iM12fFbsrNRyag37iXHzg",
+	token: "BQCZD22eA_ztzAb7rTKoYeGq0Q-ErrqsgST0QyysmRF9n4cEEY5lnhpzsGRS7L_MbT83bO4p4mFXemF4755db2bO4l5htfSEIUvb-98c46-F_tPMbrex8PbFFQx8YCmnF-V_3WYXuNDENFvryvXwmr88XkyEulUjy4O3OQ",
 
 	getHeaders: function () {
 		return {
