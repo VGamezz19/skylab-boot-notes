@@ -13,28 +13,35 @@
 
 <body>
     <header>
-        <img class='col-hidden-sm img-fluid' data-depth="0.6" id = 'headerImg'src="img/spotify_logo.png" alt="">
+        <img class='col-hidden-sm img-fluid' id='headerImg' src="img/spotify_logo.png" alt="">
     </header>
-    <main class="container-fluid" data-depth="0.6">
-        <div class="col-md-4 offset-md-4 mb-5 col-sm-12">
-            <form action="" method="get">
-                <div class="input-group input-group-lg">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroup-sizing-lg">
-                            <span class="oi oi-musical-note"></span>
-                        </span>
+    <!-- Padre -->
+    <main id='root' class="container-fluid">
+       
+        <!-- <section>
+           
+            <div class="col-md-4 offset-md-4 mb-5 col-sm-12">
+                <form action="" method="get">
+                    <div class="input-group input-group-lg">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                <span class="oi oi-musical-note"></span>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="inputSearch" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
                     </div>
-                    <input type="text" class="form-control" id="inputSearch" aria-label="Large" aria-describedby="inputGroup-sizing-sm">
-                </div>
-            </form>
-        </div>
-        <div class='row'>
-            <div id="box" class="card-columns col-md-10 offset-md-1  col-sm-12">
-
+                </form>
             </div>
-        </div>
+           
+            <div class='row'>
+                <div id="box" class="card-columns col-md-10 offset-md-1  col-sm-12">
 
-        <div class='row'>
+                </div>
+            </div>
+        </section> -->
+
+
+        <!-- <div class='row'>
 
             <div id="albumBox" class="card-columns  hidden col-md-10 offset-md-1 col-sm-12">
 
@@ -45,7 +52,7 @@
         </div>
         <button type="button" class="hidden btn btn-secondary">
             <span class="oi oi-chevron-top"></span>
-        </button>
+        </button> -->
     </main>
 
     <script src="vendor/jquery/3.3.1/jquery.min.js"></script>
@@ -54,7 +61,12 @@
     <script src="vendor/react/16.2.0/react.production.min.js"></script>
     <script src="vendor/react/16.2.0/react-dom.production.min.js"></script>
     <script src="vendor/babel/6.26.0/babel.min.js"></script>
-    <script src="scripts/main.jsx" type="text/babel"></script>
+    <script src="scripts/api/api-client.js"></script>
+    <script src="scripts/components/Artist/components/ListArtist.jsx" type="text/babel"></script>
+    <script src="scripts/components/Artist/components/SearchArtish.jsx" type="text/babel"></script>
+    <script src="scripts/components/Artist/Artist.jsx" type="text/babel"></script>
+    <script src="scripts/components/SpotiApp.jsx" type="text/babel"></script>
+    <script src="scripts/app.jsx" type="text/babel"></script>
     <!-- <script src="scripts/api/api-client.js"></script>
     <script src="scripts/template/artist-template.js"></script>
     <script src="scripts/template/album-template.js"></script>
