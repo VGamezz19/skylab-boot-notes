@@ -37,40 +37,123 @@ Sin tener `Back-End`, inportamos la `libreria` a nuestro proyecto, y lo linkamos
     <script src="vendor/babel/6.26.0/babel.min.js"></script>
     <script src="scripts/main.jsx" type="text/babel"></script>
 ```
-x
+
 ⚠️ Tambien es importante remarcar, que necesitamos levantarlo desde un "mini" servidor web
 
 
 ### Caracteristicas de React
 
-Class --> ClassNmae (a la hora de añadir una class en el HTML)
+Siempre Hemos de crear un componenete con dotacion UpperCammelCase.
+
+- ¿Que tipos de Componentes existen?
+
+Existen dos tipos de componenetes. el `instanciado` y el `functional` (smart o dump).
+
+````javaScript
+//Dump
+function ExampleFunctionalComponent() {return()}
+
+//Smart
+class ExampleInstansComponent extends React.Component {
+    constructor() {
+        super()
+        this.state = { 
+            //Any State
+        }
+    }
+    render () {
+        //Recicle JSX template.
+    }
+}
+````
+
+Las diferencias más claras es que el componenete `funcional` se define como `funcion` y solo **Printara**. No ha de tener ninguna logica.
+Contrareamente, el Componente `Smart` tiene metodos propios, estados, ect.
+
+⚠️ Un Componente `Smart` heredara todos los metodos `live recicle` de React, contendra logica (`metodos`) y tendra la posibilidad de contener `state`.
+
+Para que un componente `Smart` herede los metodos de React, necesita :
+- 1 - `extends React.Componente`
+- 2 - En el constructor de la class, añadir `super()`
+
+Es importante remarcar, que siempre que el `this.state` de un componente se modifique, se ejecutara el `Render()`, volviendo a ejecutar la "**rueda**"
+
+### this.setState
+
+this.setState es un metodo que heredamos de `React.Component`. Hemos de tener en cuenta que la actualizacion del `state` la hace `asyncronamente` y no podremos utilizar los datos de forma `syncrona` (en el mismo accionador donde hemos cambiado ese estado).
+
+ - Formas de cambiar el **`state`**
+
+Simplemente pasandole un Objeto.
+
+ ```javascript
+ class TaskInput extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            input: ''
+        }
+    }
+
+    keepInput = e => this.setState({ input: e.target.value })
+ } 
+ ```
+
+ Efectuando un calculo con el Estado anterior, con lo que quieres añadir...
+ Siempre que usemos el `prevState`, **NUNCA** hemos de devolver el mismo `prevState` modificado, sino un nuevo valor.
+
+ ```javascript
+class TaskApp extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            tasks: []
+        }
+    }
+
+    addTask = (task) => {
+        this.setState(prevState => ({ tasks: [...prevState.tasks, task] }))
+    }
+
+    doneTask = (idTask) => {
+        this.setState(prevState => ({
+            tasks: prevState.tasks.map((task, _id) => {
+                if (idTask === _id) {
+                    task.done = true
+                    return task
+                }
+                return task
+            })
+        }))
+    }
+}
+ ```
+
+**ATENTO** Dentro del Handdler del metodo `setState` estoy cogiendo el estado sin modificar `prevState` y lo "mapeo" con la informacion actual. Si nos fijamos, despues de `=>` tenemos unos `(`, esto se hace para decirle a la `arrow function` que los proximos `{ }` no son de su cuerpo, sino el inicio de un `Objeto`. Mucho cuidado con esto! puede causar mucha confusion.
+
+```javascript
+addTask = (task) => {
+        this.setState(prevStates => ({ tasks: [...prevStates.tasks, task] }))
+    }
+```
+
+ES IGUAL
+
+```javascript
+addTask = (task) => {
+        this.setState(prevStates => { 
+            return {
+                tasks: [...prevStates.tasks, task] 
+            }
+        })
+    }
+```
 
 
-al corfear componenetes, se nominan en UpperCammelCase `ExampleComponent(){}`
+### Fetch & ComponentDid/Will...Mount/Unmount, etc...
 
-un componente con Estado, necesita un Render()
+Para más informacion mirar post de [CarlosAzaustre](carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/)
 
-Al generar un componente extendido de React, es necesario llamar al metodo `super()` para instanciar todos los metodos de React. 
-
-//This desde el HTML --> Bind o Arrow. poruqe React le añade un "call(undefined)" ya qie sino le pasaria todo el objeto HTML
-
-//Es importante saber que el this.setState lo hace de forma asyncrona. y no es recomendable intentar capturar el evento, o poner alguna callback dentro de esa ejecucion, ya que despues de modificar ese estado, efectuara el renderizado.
-
-
-Todo conponente que almacena datos, tiene un state, y si tiene statue, estara generada con una Class.
-
-
-Componente Smart/ Dump --> Inteligentes con responsabilidades, o que solo printan informacion.
-
-
-
-REACT ROUTE
-
-Fetch -->
-carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
-
-
-Solo en los componentes Smaft.
 
 ComponentDidMount -->
 
@@ -80,10 +163,7 @@ NavLink ?  Cambio de rutas simulado. para que no detecte el navegador que no es 
 
 <NavLink to='{la ruta}'> Home </NavLink>    Y trae una propiedad  ques es --> activeClassName($laClase que añadira solo cuando activemos ese "NavLink").
 
-
 HashRouting --> Añade un #, y ancla la pagina. Puedes navegar pero la navegacion la realiza El cliente.
-
-
 
 ReactCLI -->npx create-react-app my-app
 
