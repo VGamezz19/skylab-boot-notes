@@ -69,6 +69,7 @@ REACT ROUTE
 Fetch -->
 carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/
 
+
 Solo en los componentes Smaft.
 
 ComponentDidMount -->
@@ -81,6 +82,13 @@ NavLink ?  Cambio de rutas simulado. para que no detecte el navegador que no es 
 
 
 HashRouting --> Añade un #, y ancla la pagina. Puedes navegar pero la navegacion la realiza El cliente.
+
+
+
+ReactCLI -->npx create-react-app my-app
+
+Una base para trabajar con React + Node
+
 
 
 
