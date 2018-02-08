@@ -74,3 +74,13 @@ Solo en los componentes Smaft.
 ComponentDidMount -->
 
 React-Routing -->
+
+NavLink ?  Cambio de rutas simulado. para que no detecte el navegador que no es una ruta de servidor
+
+<NavLink to='{la ruta}'> Home </NavLink>    Y trae una propiedad  ques es --> activeClassName($laClase que añadira solo cuando activemos ese "NavLink").
+
+
+HashRouting --> Añade un #, y ancla la pagina. Puedes navegar pero la navegacion la realiza El cliente.
+
+
+
