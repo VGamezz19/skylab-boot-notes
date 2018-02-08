@@ -1,9 +1,12 @@
 function ListArtist(props) {
     return (
-        <div id="box" className="card-columns col-md-10 offset-md-1 col-sm-12">
+        <div id="box" className="card-columns col-md-10 offset-md-1 col-sm-12" >
             {props.valueArtists.map(artist => {
                 return (
-                    <div className="card card-artist " key={artist.id}>
+                    <div 
+                        className="card card-artist " 
+                        key={artist.id}
+                        onClick={() => props.onClickArtist(artist.id)}>
                         <img 
                             className="card-img-top" 
                             src={artist.images[1].url} 
