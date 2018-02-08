@@ -1,36 +1,32 @@
-/**
- * Beers API client based on Fetch API.
- * 
- * @version 2.0.0
- */
-let beersApi
-(() => {
-  'use strict'
 
-  function call(path) {
-    return fetch(`${inst.baseUrl}/${path}`)
-      .then(res => res.json())
-  }
+const FETCH_TIMEOUT = 3000
+const beersApi = {
 
-  const inst = {
-    baseUrl: 'https://quiet-inlet-67115.herokuapp.com/api',
+	urlBase: 'http://quiet-inlet-67115.herokuapp.com/api/search/all?q=',
 
-    /**
-     * Searches beers by matching a text.
-     * 
-     * @param {String} query - The text to search.
-     * @returns {Promise} - A promise that resolves if API call succeeds, otherwise rejects.
-     */
-    search: query => call(`search/all?q=${query}`),
+	call(path) {
+		return new Promise(function (resolve, reject) {
+				const timeout = setTimeout(function () {
+					reject(new Error('Request timed out'));
+				}, FETCH_TIMEOUT);
 
-    /**
-     * Retrieves a beer detail by id.
-     * 
-     * @param {String} id - The id of the beer's details to retrieve.
-     * @returns {Promise} - A promise that resolves if API call succeeds, otherwise rejects.
-     */
-    retrieve: id => call(`beer/${id}`)
-  }
+				fetch(path)
+					.then(res => {
+						clearTimeout(timeout);
+						return resolve(res);
+					})
+					.catch(function (err) {
+						reject(err);
+					})
+			})
+			.then(res => res.json())
+			.catch(err => {throw new Error(err)})
+	},
 
-  beersApi = inst
-})()
+	search(query) {
+		let path = this.urlBase + query
+		if (!query) return console.error("Error, getApiBeer.getSearch() <-- need URL")
+
+		return this.call(path)
+	}
+}

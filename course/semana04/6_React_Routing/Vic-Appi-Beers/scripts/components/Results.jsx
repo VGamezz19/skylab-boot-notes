@@ -16,6 +16,7 @@ class Results extends Component {
     }
 
     componentDidMount() {
+        
         this.loadBeers(this.props.match.params.query)
     }
 
@@ -24,7 +25,6 @@ class Results extends Component {
     }
 
     render() {
-        console.log(this.state.beers)
         return (
             <section className='row'>
                 <div className="col-12" id='box'>
@@ -54,9 +54,6 @@ class Results extends Component {
                 </div>
             </section>
         )
-
-
     }
-
 }
 
