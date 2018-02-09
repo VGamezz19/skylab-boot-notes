@@ -169,6 +169,13 @@ ReactCLI -->npx create-react-app my-app
 
 Una base para trabajar con React + Node
 
+--> Para añadir nuestro componenetes, creamos en nuestro /SRC una carpeta "components"
+
+Para añadir Bootstrap, hemos de añadir el framework dentro de la carpeta Public, añadimos el Vendor
+y despues abrimos el  index.HTML de la misma carpeta, y añadimos el link de las dependencias.
+
+
+
 
 
 
