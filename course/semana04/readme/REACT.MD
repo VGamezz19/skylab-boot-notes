@@ -177,5 +177,7 @@ y despues abrimos el  index.HTML de la misma carpeta, y añadimos el link de las
 
 
 
+Soruce.
 
+primer npm run build en la carpeta de ReactCLi -->surge  + /build/
 
