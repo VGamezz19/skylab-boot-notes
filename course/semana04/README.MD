@@ -10,3 +10,9 @@ Que he aprendido?
 - Metodos recicle de React.Component
 - NPM --> React Routing
 - ReactCLI `create-react-app`
+
+## [Surge](https://surge.sh/)
+
+Static web publishing for Front-End Developers
+
+Para publicar proyecto de React, se ha de especificar el `path` de **/build/**

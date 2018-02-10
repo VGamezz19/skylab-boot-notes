@@ -305,10 +305,3 @@ para crear una aplicacion efectuaremos el comando --> `npx create-react-app my-a
 
 Para añadir Bootstrap, librerias, estilos genericos, etc, se ha de añadir todo dentro de la carpeta `Public`. 
 y despues abrimos el  `index.html` de la misma carpeta, y **añadimos el link** de las dependencias.
-
-
-
-Soruce.
-
-primer npm run build en la carpeta de ReactCLi -->surge  + /build/
-
