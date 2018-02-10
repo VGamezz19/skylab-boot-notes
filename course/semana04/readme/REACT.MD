@@ -154,26 +154,157 @@ addTask = (task) => {
 
 Para más informacion mirar post de [CarlosAzaustre](carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/)
 
+Para realizar una peticion `Fetch` con React, se realiza de esta forma:
 
-ComponentDidMount -->
+````javascript
+fetch('http://taller-angular.carlosazaustre.es/empleados')
+      .then((response) => {
+        return response.json()
+      })
+      .then((empleados) => {
+        this.setState({ empleados: empleados })
+      })
+````
 
-React-Routing -->
+El final de la respuesta ha de setear el `state` para que efectue el `live circle` de React.
 
+Existen unos metodos que nos proporciona React muy importantes para gestionar cuando se monta el componente, se desmonta, ect.
+
+- **componentWillMount()** Se lanza antes de que se renderice el componente
+- **componentDidMount()** Se lanza despues del renderizado del componente
+- **shouldComponentUpdate()** Devuelve con un valor si el componente debería actualizarse
+- **componentWillUnMount()** Se lanza antes de que el componente se elimine.
+
+Por ejemplo, podriamos usar el metodo `componentWillMount` para realizar una peticion importante del componente.
+
+Como seguramente esta peticion tardara mucho, tendremos que poner un pequeño mensage dicendo que estan cargando datos.
+Simplemente poniendo un condicional dentro del `Render()`
+
+```javascript 
+render() {
+    if (this.state.empleados.length > 0) {
+      return (
+        <div className="container-fluid">
+          <EmpleadoList listado={this.state.empleados} />
+        </div>
+      )
+    } else {
+      return <p className="text-center">Cargando empleados...</p>
+    }
+  }
+
+```
+
+### React-Routing
+
+En react se podria hacer un enrutado con un par de condicionales y una logica de compoenentes que fueran alternandose segun donde haces click.
+Pero tambien existe un paquete que nos facilita a la hora de hacer un `enrutado` de nuestro componentes.
+
+para usarlo primeramente, si estamos en `react-create-app` usar `npm i --save react-router-dom`. Si estamos trabajando sin ninguna herramienta CLI, simplemente descargarse el codigo de `router-dom` y enlazarlo en el HTML como una libreria.
+
+Ejemplo:
+
+```javascript
+        return <BrowserRouter>
+            <div className="container">
+                <NavBar />
+                <Route exact path="/" component={Jumbotron} />
+                <Route exact path="/" component={HomePage} />
+                <Route path="/about" component={AboutPage} />
+                <Route path="/contact" component={ContactPage} />
+            </div>
+        </BrowserRouter>
+        //ooo...
+        return <HashRouter>
+            <div className="container">
+                <NavBar />
+                <Route exact path="/" component={Jumbotron} />
+                <Route exact path="/" component={HomePage} />
+                <Route path="/about" component={AboutPage} />
+                <Route path="/contact" component={ContactPage} />
+            </div>
+        </HashRouter>
+```
+
+En el path `/` se ha de poner la propiedad `exact` para que sea exactamente `/` (y no `/about` ya que empieza por `/`)
+
+`BrowserRouter` el navegador y el servidor navegan.
+
+`HashRouting` Añade un #, y ancla la pagina. Puedes navegar pero la navegacion la realiza El cliente.
+
+Para poder navegar por las rutas creadas, tendremos que crear elementos `cliqueables` con estas propiedad.
 NavLink ?  Cambio de rutas simulado. para que no detecte el navegador que no es una ruta de servidor
 
-<NavLink to='{la ruta}'> Home </NavLink>    Y trae una propiedad  ques es --> activeClassName($laClase que añadira solo cuando activemos ese "NavLink").
+```javascript
+<li>
+    <NavLink to="/" activeClassName="active">Home</NavLink>
+</li>
+```
 
-HashRouting --> Añade un #, y ancla la pagina. Puedes navegar pero la navegacion la realiza El cliente.
+la propiedad `activeClassName`($laClase que añadira solo cuando activemos ese "NavLink").
 
-ReactCLI -->npx create-react-app my-app
+#### Pasar informacion por la URL
 
-Una base para trabajar con React + Node
+Si queremos transferir informacion por la `URL`, lo tendremos que hacer de esta forma:
 
---> Para añadir nuestro componenetes, creamos en nuestro /SRC una carpeta "components"
+```javascript
+<Route path="/search/:query" component={Results} />
+```
 
-Para añadir Bootstrap, hemos de añadir el framework dentro de la carpeta Public, añadimos el Vendor
-y despues abrimos el  index.HTML de la misma carpeta, y añadimos el link de las dependencias.
+Dentro del componente `Results` recivira la ruta de esta forma 
 
+```javascript
+    loadBeers(query) {
+        beersApi.search(query) //Api-Client realizada...
+            .then(beers => this.setState({ beers }))
+            .catch(console.error)
+    }
+
+    componentDidMount() {
+        
+        this.loadBeers(this.props.match.params.query)
+    }
+
+    componentWillReceiveProps(props) {
+        this.loadBeers(props.match.params.query)
+    }
+```
+
+En este caso he utilizado los dos `metodos` de react para recoger la `query`.
+
+**¿Porque?**
+
+La primera busqueda que hagamos, mostrara el componente por primera vez y recogera la `this.props.match.params.query` del metodo `componentDidMount`. Pero si volvemos a realizar otra busqueda. El componente **YA SE HA MONTADO PREVIAMENTE** y no volvera a ejecutar el metodo `componentDidMount`. sino el `componentWillReceiveProps(props)`
+
+#### Modificar la URL desde un componente.
+
+Si queremos modificar la URL de forma que la libreria `react-routing` lo detecte. tendremos que seguir dos pasos.
+Primeramente, en el componente padre, tendremos que definir que el componente que va a efectuar esa modificacion de la URL contiene --> `withRouter()`
+
+```javascript
+const { HashRouter, Route, NavLink, withRouter } = ReactRouterDOM
+const SearchWithRouter = withRouter(Search)
+```
+
+En este caso el componente hijo `Search` iba a realizar esa "busqueda".  Apartir de este momento, para referirnos al componente `Search`, tendra que ser `SearchWithRouter`, para poder heredar las caracteristicas de un componente `withRouter`
+
+Finalmente, en el componente hijo `Search`, al accionar, simplemente poniendo
+```javascript
+this.props.history.push(`/search/${this.state.query}`)
+```
+estaremos `pusheando` a nuestro `path actual` la string especificada anteriormente.
+
+### ReactCLI
+
+Una base para trabajar con ReactJSX + Node.
+
+para crear una aplicacion efectuaremos el comando --> `npx create-react-app my-app`
+
+
+ - ⚠️ Para añadir nuestro componenetes, creamos en nuestro **/src** una carpeta `components`
+
+Para añadir Bootstrap, librerias, estilos genericos, etc, se ha de añadir todo dentro de la carpeta `Public`. 
+y despues abrimos el  `index.html` de la misma carpeta, y **añadimos el link** de las dependencias.
 
 
 
