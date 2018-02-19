@@ -15,3 +15,7 @@
 ## [Semana05](https://github.com/VGamezz19/skylab-boot-notes/tree/dev/course/semana05) - Proyecto Font-End in TEAM!
 
 ### 12-02-2018
+
+## [Semana06](https://github.com/VGamezz19/skylab-boot-notes/tree/dev/course/semana06) - Proyecto Font-End in TEAM!
+
+### 19-02-2018
