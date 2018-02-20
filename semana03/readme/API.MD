@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/)   API
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana03/)   API
 
 Existen dos tipos de APIS. la API Servidor, que nos servira informacion de la BBDD, o la API-Client. Que nos gestionara la API del servidor, y nos tratara y proporcionara los datos ya masticados.
 

@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana06/)   Node-Engine
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana06/)   Node-Engine
 
 
 Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
@@ -10,13 +10,13 @@ trabaja con eventos que non-blocking. La posibilidad de trabajar asyncronamente 
 Los otros servidores más antiguos, se limitan ha ejecutar peticiones `syncronamente`, haciendo que las peticiones se bloqueen y que el tiempo de ejecucion (la respuesta del servidor) tarde más.
 
 
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana06/public/threads.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana06/public/threads.png)
 
 Esto es gracias a (aparte del motor `V8`) a [libuv](http://libuv.org/) una libreria que permite a Node ejecutar los eventos Asyncronamente y hacer funcionar el `event loop`
 
 
 ### Engine Node
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana06/public/engine.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana06/public/engine.png)
 
 Como podemos ver en la anterior imagen, node esta compuesto por 3 capas.
 - 1. La primera y más exterior es donde nosotros trabajaremos, donde efectuaremos nuestro codigo JS.
@@ -29,4 +29,4 @@ Se esta trabajando para que el motor `V8` compile ficheros `Asyncronamente`, par
 
 
 ### Event Loop
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana06/public/evenLoop.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana06/public/evenLoop.png)

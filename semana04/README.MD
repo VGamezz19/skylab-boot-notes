@@ -1,7 +1,7 @@
 # [← |](https://github.com/VGamezz19/skylab-boot-notes) Semnana04
 
 
-## [React](https://github.com/VGamezz19/skylab-curso/tree/dev/course/semana04/readme/REACT.MD)
+## [React](https://github.com/VGamezz19/skylab-curso/tree/master/semana04/readme/REACT.MD)
 
 Que he aprendido?
 - Fundamentos de React

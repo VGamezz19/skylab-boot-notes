@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/)   ES6
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana03/)   ES6
 
 ## [Enjanced Object Literals](http://www.benmvp.com/learning-es6-enhanced-object-literals/)
 
@@ -113,7 +113,7 @@ console.log(foo); // "bar"
 
 ## [Spread Operator](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/Spread_operator)
 
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/public/spread.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana03/public/spread.png)
 
 
 Ejemplos:

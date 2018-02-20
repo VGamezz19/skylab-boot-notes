@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana06/)   NodeJS
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana06/)   NodeJS
 
 
 

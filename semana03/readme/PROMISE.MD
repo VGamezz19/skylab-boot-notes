@@ -1,5 +1,5 @@
 
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/)   Fetch - Promise
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana03/)   Fetch - Promise
 
 
 ### [Fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
@@ -29,7 +29,7 @@ para poder añadirle **timeout** mirar este [link](https://davidwalsh.name/fetch
 
 ### Promise
 
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana03/public/promise.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana03/public/promise.png)
 
 Ejemplos:
 
