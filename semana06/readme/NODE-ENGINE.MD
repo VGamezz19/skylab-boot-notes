@@ -19,11 +19,11 @@ Esto es gracias a (aparte del motor `V8`) a [libuv](http://libuv.org/) una libre
 ![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana06/public/engine.png)
 
 Como podemos ver en la anterior imagen, node esta compuesto por 3 capas.
-- 1. La primera y más exterior es donde nosotros trabajaremos, donde efectuaremos nuestro codigo JS.
+-  La primera y más exterior es donde nosotros trabajaremos, donde efectuaremos nuestro codigo JS.
 
-- 2. La segunda capa es donde se hacen los `Bindings` entre la primera capa JS y la 3era e ultima capa Engine/Core de Node.
+-  La segunda capa es donde se hacen los `Bindings` entre la primera capa JS y la 3era e ultima capa Engine/Core de Node.
 
-- 3. La ultima capa de Engine se encuentra el motor de **Crhome V8** y la libreria **libuv**.
+-  La ultima capa de Engine se encuentra el motor de **Crhome V8** y la libreria **libuv**.
 
 Se esta trabajando para que el motor `V8` compile ficheros `Asyncronamente`, para que séa más rapido y más potente.
 
