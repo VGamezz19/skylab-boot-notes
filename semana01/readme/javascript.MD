@@ -119,7 +119,7 @@ Dentro de JavaScript, todos los tipos de datos que no son  primitivos son `Objet
 Y todos tendran el `__proto__` de Objeto, aparte de su `__proto__`.
 Mirando la proxima Imagen, Interpretando que `Car` es **Object** y que `FF (ferrari)` es **Array**
 
-![Imagen](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana01/public/herencias.jpg)
+![Imagen](https://github.com/VGamezz19/skylab-boot-notes/blbo/master/semana01/public/herencias.jpg)
 
 
 - Heredar los metodos del padre. Ejemplo Person > Student

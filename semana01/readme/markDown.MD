@@ -8,4 +8,4 @@ En VSCode tiene su propio interprete y podemos ver al momento como se ve nuestro
 
 Tambien existen editores onlyne para poder escribir MD y a la vez te proporcionan codigo MD --> [StackEditor](https://stackedit.io/editor)
 
-![Imagen](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana01/public/markDown.png)
+![Imagen](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana01/public/markDown.png)
