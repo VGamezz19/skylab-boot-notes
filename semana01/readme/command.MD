@@ -1,4 +1,4 @@
-# [← |](https://github.com/VGamezz19/skylab-boot-notes/tree/dev/course/semana01)   Command
+# [← |](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana01)   Command
 
 - **File**
 

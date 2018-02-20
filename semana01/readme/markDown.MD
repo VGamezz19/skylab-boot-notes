@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana01/)  MarkDown 
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/master/semana01/)  MarkDown 
 
 MarkDown es un lenguaje para escribir e explicar, funciona con unas marcas que finalmente se compilan a etiquetas HTML.
 Necesitamos un **Interprete** para poder leer ficheros `.md`
@@ -8,4 +8,4 @@ En VSCode tiene su propio interprete y podemos ver al momento como se ve nuestro
 
 Tambien existen editores onlyne para poder escribir MD y a la vez te proporcionan codigo MD --> [StackEditor](https://stackedit.io/editor)
 
-![Imagen](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana01/public/markDown.png)
+![Imagen](https://github.com/VGamezz19/skylab-boot-notes/master/semana01/public/markDown.png)

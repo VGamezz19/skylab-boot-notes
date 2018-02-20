@@ -1,4 +1,4 @@
-# [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana01/)  JavaScriptECMAS5
+# [← |](https://github.com/VGamezz19/skylab-boot-notes/master/semana01/)  JavaScriptECMAS5
 
 ## Formatos
 
@@ -119,7 +119,7 @@ Dentro de JavaScript, todos los tipos de datos que no son  primitivos son `Objet
 Y todos tendran el `__proto__` de Objeto, aparte de su `__proto__`.
 Mirando la proxima Imagen, Interpretando que `Car` es **Object** y que `FF (ferrari)` es **Array**
 
-![Imagen](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana01/public/herencias.jpg)
+![Imagen](https://github.com/VGamezz19/skylab-boot-notes/master/semana01/public/herencias.jpg)
 
 
 - Heredar los metodos del padre. Ejemplo Person > Student
