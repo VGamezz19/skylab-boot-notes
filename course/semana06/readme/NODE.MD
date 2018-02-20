@@ -13,3 +13,22 @@ devtool --> $ devtool (nombre del archivo)
 
 
 si ejecutas --> node . por defecto te ejecutara el archivo index.js
+
+
+
+http.get(url, (res) => {
+
+    res.setEncoding('utf-8')
+
+    res.on <<----
+
+socket --> TCP/IP
+
+GET
+PUT
+PUT
+DELETE
+PATCH
+
+
+HTTP COLLECT ---> collect
