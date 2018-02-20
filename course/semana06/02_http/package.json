@@ -1,0 +1,15 @@
+{
+  "name": "02_http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "0.1_http_collect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Victor Gamez <victor.gamez1596@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "concat-stream": "^1.6.0",
+    "lb": "0.0.1"
+  }
+}
