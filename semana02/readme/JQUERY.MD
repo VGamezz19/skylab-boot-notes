@@ -1,6 +1,6 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/)   jQuery
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/)   master
 
-jQuery es una libreria basada en el `DOM` y la seleccion de elemento de `JS`. 
+master es una libreria basada en el `DOM` y la seleccion de elemento de `JS`. 
 Usa el caracter `$` para efectuar una serie de concatenaciones.
 
 Cuando escribimos esto: `$(".button").html("nex-stept")`, simplemente lo que esta generando es una `chainable function`, que lo que esta devolviendo es un objeto propio de `jQuery`. Esto es bueno y a la vez muy malo. Si no tenemos en cuenta la definicion de nuevos objetos `jQuery` (ergo, instanciar nuevos `$(...)`). Nuestra aplicacion puede llegar a relentizarse serieamente.

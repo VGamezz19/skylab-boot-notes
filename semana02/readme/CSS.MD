@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/)   CSS
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/)   CSS
 
 CSS (`Cascade Style Sheet`) Como bien indica su nombre, la definicion de los estilos se hace en cascada. dependiendo del orden, altera el producto, y depende de lo tipada que este la busqueda, tambien. por ejemplo:
 
@@ -38,33 +38,33 @@ Siempre, para trabajar con `Flex`, tendremos que definir al padre el contenedor 
 
 ## `flex-direction` La direccion que va a tomar el padre `flex`
 
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/flex-direction.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/public/flex-direction.png)
 
 
 ## `flex-wrap`
 
 Le añadimos el trivuto `wrap` al contenedor padre, haciendo que si un contenido no cabe, lo podra directamente abajo. 
 
- ![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/flex-wrap.png)   
+ ![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/public/flex-wrap.png)   
 
 ## `flex-flow`
 Podemos definir `flex-direction` y `flex-wrap` en la misma etiqueta
 
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/flex-flow.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/public/flex-flow.png)
 
 
 ## `justify-content`
 Servir de forma general el contenido.
 
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/justify-content.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/public/justify-content.png)
     
 
 ## `align-items`
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/align-items.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/public/align-items.png)
     
 
 ## `align-content`
-![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana02/public/align-content.png)
+![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana02/public/align-content.png)
 
 Para ver mas, mirar [flexBox css-tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
     
