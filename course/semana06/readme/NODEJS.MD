@@ -1,9 +1,10 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana06/)   Node
+## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/dev/course/semana06/)   NodeJS
+
+
 
 Para más informacin mirar [Node](https://nodejs.org/en/docs/)
 
 
-permite correr JS y trabaja sobre un motor de Crhome (V8). trabaja con eventos que non-blocking. La posibilidad de trabajar asyncronamente en disco.
 
 no window, ahora es global.
 
