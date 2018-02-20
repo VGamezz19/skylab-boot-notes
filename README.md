@@ -20,6 +20,6 @@
 
 ### 12-02-2018
 
-## [Semana06](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana06) - Node-Engine Node.JS
+## [Semana06](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana06) - NodeEngine - Node.JS - HTTP - NET (sockets + webSocket)
 
 ### 19-02-2018
