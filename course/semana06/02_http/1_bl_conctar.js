@@ -22,18 +22,3 @@ function httpReque(url, i = 0, otherHttp = '') {
 }
 
 httpReque(url)
-
-// res.on('data', (data)=> console.log("now data", data))
-// let rawData = ''
-// let count = 0;
-// res.on('data',(res) => {
-//     count ++
-//     rawData += res
-// })
-
-// res.on('error', () => console.error("some error"))
-
-// res.on('end', () =>{
-//     console.log("end conection",rawData, "__>>>>>", count)
-// })
-//})

@@ -23,12 +23,14 @@ http.get(url, (res) => {
     res.on <<----
 
 socket --> TCP/IP
+WebSocket --> ??
+serverConect --> ??
+http --> ??
 
 GET
 PUT
 PUT
 DELETE
 PATCH
-
 
 HTTP COLLECT ---> collect
