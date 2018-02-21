@@ -5,6 +5,6 @@ const server = http.createServer((req, res) => {
 })
 
 const port = process.argv[2]
-const file = process.argv[3]
+const file = process.argv[3] 
 
 server.listen(port, () => console.log(`escuchando en el puesto ${port}`))
