@@ -73,7 +73,7 @@ Generamos un fichero `.env` en nuestra raiz. lo rellenamos con la informacion:
 ````txt
 PORT=5000
 DATA_PATH=./data/staff.json
-````
+```` 
 
 y finalmente implementamos la informacion con un `dotenv.config()` al principio de `index.js` (para que sea lo primero que ejecutemos).
 
