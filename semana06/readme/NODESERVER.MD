@@ -119,22 +119,4 @@ Ejemplo:
 net.createServer () crea un servidor que simplemente entiende cuándo ha ocurrido una conexión TCP, y se han transmitido datos, etc., pero no sabe nada sobre si se ha recibido una solicitud HTTP válida, etc.
 `socker/WebSocket` usan el protocolo `TCP`
 
- *WebSocket es una tecnología que proporciona un canal de comunicación bidireccional y full-duplex sobre un único socket TCP*
-
-
-
-Express nos aporta una facilidad de generar y servir peticiones HTTP. (servidor web)
-Moment --> fetchas
-
-BodyPArser expres --> Modelware ('/',midelhare,CallBack(){
-    //code you know
-})
-
------
-podemos crear un fichero `.env` para especificar el enviroment de el servidor especifico.
-por ejemplo, con esto podemos definir las varibles de entorno de cada servidor que vayamos a levantar.
-y luego acceder a ellas con
-
-process.evn.${nombre-variables}
-
-con el paquete dotenv
+WebSocket es una tecnología que proporciona un canal de comunicación bidireccional y full-duplex sobre un único socket TCP

@@ -16,10 +16,10 @@
 
 ### 05-02-2018
 
-## [Semana05](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana05) - Proyecto Font-End in TEAM!
+## [Semana05](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana05) - Proyecto Font-End in TEAM
 
 ### 12-02-2018
 
-## [Semana06](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana06) - NodeEngine - Node.JS - HTTP - NET (sockets + webSocket)
+## [Semana06](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana06) - NodeEngine - Node.JS - HTTP - NET (sockets + webSocket) - Express
 
 ### 19-02-2018
