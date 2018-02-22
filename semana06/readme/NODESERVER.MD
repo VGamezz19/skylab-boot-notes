@@ -129,3 +129,12 @@ Moment --> fetchas
 BodyPArser expres --> Modelware ('/',midelhare,CallBack(){
     //code you know
 })
+
+-----
+podemos crear un fichero `.env` para especificar el enviroment de el servidor especifico.
+por ejemplo, con esto podemos definir las varibles de entorno de cada servidor que vayamos a levantar.
+y luego acceder a ellas con
+
+process.evn.${nombre-variables}
+
+con el paquete dotenv
