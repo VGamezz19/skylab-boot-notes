@@ -15,6 +15,6 @@ Puro NodeJS, Ni Express ni Nha', a palo seco!.
 
 Protocolos --> TCP + HTTP `NET (sockets), HTTP`
 
-## [Node-Express](https://github.com/VGamezz19/skylab-curso/tree/master/semana06/readme/NODEEXPRESSS.MD)
+## [Node-Express](https://github.com/VGamezz19/skylab-curso/tree/master/semana06/readme/NODEEXPRESS.MD)
 
 Express nos aporta una facilidad de generar y servir peticiones HTTP. (servidor web)
