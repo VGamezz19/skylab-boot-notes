@@ -1,4 +1,4 @@
-## [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana04/)   React - Babel
+# [← |](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana04/)   React - Babel
 
 React trabaja con el concepto VirtualDOM, genera una foto de como esta actualmente el `DOM` y si el estado del componente se modifica, revisa si hace falta "actualizar la foto" (`render()`).
 React se encarga de actualizar nuestro DOM a tiempo Real.
@@ -7,7 +7,7 @@ React se encarga de actualizar nuestro DOM a tiempo Real.
 
 Como podemos ver en la foto, nosotros simplemente trabajaremos con el componente y sus estados. Pero react lo convertira en un `DOM Virtual`. La ventaja de esto, como se ve en la foto, es que puede trabajar en cualquier tipo de browser y es facilmente `testeable`.
 
-### One-way data flow
+## One-way data flow
 
 Los componentes de React se estructuran siguiendo una gerarquia de padres ha hijos.
 
@@ -19,11 +19,12 @@ Por eso se denomina `One-way data flow`, han de seguir un unico camino recursivo
 
 ![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana04/public/way-data-flow.png)
 
-## Ejemplo:
+### Ejemplo
 
 ![Image](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana04/public/exampleReact.png)
 
 ### JSX
+
 Forma de escribir el `html` dentro de tus fichero `JS`. La **X** viene de `XML`, asique es muy importante cerrar los `tags` (`<tag/>`) o nos tirara un `error`.
 
 ### Babel
@@ -33,13 +34,13 @@ React trabaja con la libreria `babel`. `babel` es un compilador de codigo que no
 - ¿Como se usa?
 
 Sin tener `Back-End`, inportamos la `libreria` a nuestro proyecto, y lo linkamos en nuestro `html`. despues, es necesario especificar a `babel` que archivo va ha tener que interpretar, de esta forma:
+
 ```html
     <script src="vendor/babel/6.26.0/babel.min.js"></script>
     <script src="scripts/main.jsx" type="text/babel"></script>
 ```
 
 ⚠️ Tambien es importante remarcar, que necesitamos levantarlo desde un "mini" servidor web
-
 
 ### Caracteristicas de React
 
@@ -57,7 +58,7 @@ function ExampleFunctionalComponent() {return()}
 class ExampleInstansComponent extends React.Component {
     constructor() {
         super()
-        this.state = { 
+        this.state = {
             //Any State
         }
     }
@@ -73,6 +74,7 @@ Contrareamente, el Componente `Smart` tiene metodos propios, estados, ect.
 ⚠️ Un Componente `Smart` heredara todos los metodos `live recicle` de React, contendra logica (`metodos`) y tendra la posibilidad de contener `state`.
 
 Para que un componente `Smart` herede los metodos de React, necesita :
+
 - 1 - `extends React.Componente`
 - 2 - En el constructor de la class, añadir `super()`
 
@@ -82,7 +84,7 @@ Es importante remarcar, que siempre que el `this.state` de un componente se modi
 
 this.setState es un metodo que heredamos de `React.Component`. Hemos de tener en cuenta que la actualizacion del `state` la hace `asyncronamente` y no podremos utilizar los datos de forma `syncrona` (en el mismo accionador donde hemos cambiado ese estado).
 
- - Formas de cambiar el **`state`**
+- Formas de cambiar el **`state`**
 
 Simplemente pasandole un Objeto.
 
@@ -96,7 +98,7 @@ Simplemente pasandole un Objeto.
     }
 
     keepInput = e => this.setState({ input: e.target.value })
- } 
+ }
  ```
 
  Efectuando un calculo con el Estado anterior, con lo que quieres añadir...
@@ -141,16 +143,15 @@ ES IGUAL
 
 ```javascript
 addTask = (task) => {
-        this.setState(prevStates => { 
+        this.setState(prevStates => {
             return {
-                tasks: [...prevStates.tasks, task] 
-            }
+                tasks: [...prevStates.tasks, task]
+          }
         })
     }
 ```
 
-
-### Fetch & ComponentDid/Will...Mount/Unmount, etc...
+### Fetch & ComponentDid/Will...Mount/Unmount, etc
 
 Para más informacion mirar post de [CarlosAzaustre](carlosazaustre.es/consumiendo-un-api-rest-desde-react-js-con-ecmascript6/)
 
@@ -180,7 +181,7 @@ Por ejemplo, podriamos usar el metodo `componentWillMount` para realizar una pet
 Como seguramente esta peticion tardara mucho, tendremos que poner un pequeño mensage dicendo que estan cargando datos.
 Simplemente poniendo un condicional dentro del `Render()`
 
-```javascript 
+```javascript
 render() {
     if (this.state.empleados.length > 0) {
       return (
@@ -251,7 +252,7 @@ Si queremos transferir informacion por la `URL`, lo tendremos que hacer de esta 
 <Route path="/search/:query" component={Results} />
 ```
 
-Dentro del componente `Results` recivira la ruta de esta forma 
+Dentro del componente `Results` recivira la ruta de esta forma
 
 ```javascript
     loadBeers(query) {
@@ -261,7 +262,6 @@ Dentro del componente `Results` recivira la ruta de esta forma
     }
 
     componentDidMount() {
-        
         this.loadBeers(this.props.match.params.query)
     }
 
@@ -276,7 +276,7 @@ En este caso he utilizado los dos `metodos` de react para recoger la `query`.
 
 La primera busqueda que hagamos, mostrara el componente por primera vez y recogera la `this.props.match.params.query` del metodo `componentDidMount`. Pero si volvemos a realizar otra busqueda. El componente **YA SE HA MONTADO PREVIAMENTE** y no volvera a ejecutar el metodo `componentDidMount`. sino el `componentWillReceiveProps(props)`
 
-#### Modificar la URL desde un componente.
+#### Modificar la URL desde un componente
 
 Si queremos modificar la URL de forma que la libreria `react-routing` lo detecte. tendremos que seguir dos pasos.
 Primeramente, en el componente padre, tendremos que definir que el componente que va a efectuar esa modificacion de la URL contiene --> `withRouter()`
@@ -289,9 +289,11 @@ const SearchWithRouter = withRouter(Search)
 En este caso el componente hijo `Search` iba a realizar esa "busqueda".  Apartir de este momento, para referirnos al componente `Search`, tendra que ser `SearchWithRouter`, para poder heredar las caracteristicas de un componente `withRouter`
 
 Finalmente, en el componente hijo `Search`, al accionar, simplemente poniendo
+
 ```javascript
 this.props.history.push(`/search/${this.state.query}`)
 ```
+
 estaremos `pusheando` a nuestro `path actual` la string especificada anteriormente.
 
 ### ReactCLI
@@ -300,8 +302,7 @@ Una base para trabajar con ReactJSX + Node.
 
 para crear una aplicacion efectuaremos el comando --> `npx create-react-app my-app`
 
+- Para añadir nuestro componenetes, creamos en nuestro **/src** una carpeta `components`
 
- - ⚠️ Para añadir nuestro componenetes, creamos en nuestro **/src** una carpeta `components`
-
-Para añadir Bootstrap, librerias, estilos genericos, etc, se ha de añadir todo dentro de la carpeta `Public`. 
+Para añadir Bootstrap, librerias, estilos genericos, etc, se ha de añadir todo dentro de la carpeta `Public`.
 y despues abrimos el  `index.html` de la misma carpeta, y **añadimos el link** de las dependencias.

@@ -31,7 +31,7 @@ app.get('/api/parsetime', (req, res) => {
         minute: date.minutes(),
         second: date.seconds()
     }
-
+bodyParser.
     // res.writeHead(200, { 'Content-Type': 'application/json' })
     // res.end(JSON.stringify(data))
 
