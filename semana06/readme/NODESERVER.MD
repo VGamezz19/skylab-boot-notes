@@ -66,6 +66,8 @@ client.on('data', data => console.log(data.toString()))
 //...
 ```
 
+Podemos interpretar que Socket es un enchufe bidireccional, que podemos recivir y enviar datos en un mismo evento.
+
 ### http.createServer()
 
 -- [Doc http](https://nodejs.org/api/http.html) --
