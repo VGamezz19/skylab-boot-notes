@@ -85,3 +85,9 @@ Ejemplo:
 const PORT = process.env.PORT || 5000
             //process.evn.${nombre-variables}
 ```
+
+
+express.route
+
+route es un paquete de express. especificamos las rutas en el podemos expecificar(agrupar) las rutas que se van a usar en la app. y despues usarlas cuando queramos.
+

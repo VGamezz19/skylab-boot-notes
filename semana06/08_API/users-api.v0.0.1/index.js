@@ -6,7 +6,7 @@ const {okMsg,errMsg} = require('./response')
 const app = express()
 
 const users = []
-
+console.log(express)
 app.use(bodyParser.json())
 
 app.get('/api/users', (req, res) => res.send(okMsg('Users listing succeeded.', users.map(({username}) => ({username})))))
