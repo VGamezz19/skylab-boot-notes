@@ -18,3 +18,7 @@ Protocolos --> TCP + HTTP `NET (sockets), HTTP`
 ## [Node-Express](https://github.com/VGamezz19/skylab-curso/tree/master/semana06/readme/NODEEXPRESS.MD)
 
 Express nos aporta una facilidad de generar y servir peticiones HTTP. (servidor web)
+
+## [Node-Jasmine](https://github.com/VGamezz19/skylab-curso/tree/master/semana06/readme/NODEJASMINE.MD))
+
+Es muy importante implementar en cualquier entorno la metodologias TDD. en Node podemos usar `Mucha` o `Jasmine`
