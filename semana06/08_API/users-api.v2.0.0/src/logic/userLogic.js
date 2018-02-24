@@ -13,7 +13,7 @@ const userLogic = {
         validate(username, password)
 
         try{
-            userData.retrieve(username)
+           userData.retrieve(username)
         } catch(err) {
             return userData.create(username, password)
         }
@@ -30,10 +30,12 @@ const userLogic = {
     update(username, password, newPassword) {
         validate(username, password)
 
+        if(!newPassword) throw Error('Mandatory newPassword.')
+
         const user = userData.retrieve(username)
 
         if (user.password === password) {
-            userData.update(username, newPassword)
+            return userData.update(username, newPassword)
         } else
             throw Error('Wrong username and/or password.')
     },
