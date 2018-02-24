@@ -7,7 +7,7 @@
     "start": "node src",
     "debug": "devtool src --watch",
     "watch": "nodemon src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine --config=./spec/config/jasmine.json"
   },
   "keywords": [],
   "author": "",

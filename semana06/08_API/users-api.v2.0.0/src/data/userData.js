@@ -4,7 +4,7 @@ const userData = {
     list() { return users },
 
     create(username, password) {
-        users.push({ username, password })
+        return users.push({ username, password })
     },
 
     retrieve(username) {
@@ -18,7 +18,7 @@ const userData = {
     update(username, password) {
         const user = this.retrieve(username)
 
-        user.password = password
+        return user.password = password
     },
 
     delete(username) {
@@ -26,7 +26,7 @@ const userData = {
 
         if (index < 0) throw Error('User does not exist.')
 
-        users.splice(index, 1)
+       return users.splice(index, 1)
     }
 }
 
