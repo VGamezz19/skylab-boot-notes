@@ -2,14 +2,12 @@ require('dotenv').config()
 
 const express = require('express')
 
+const taskRoutes = require('./routes/taskRoutes')
+
 const app = express()
 
-const bodyParser = require('body-parser')
 
-//All petitions of this aplications, have these middleware `bodyParser.json()`
-app.use(bodyParser.json())
-
-require('./data/taskData')
+app.use('/api', taskRoutes)
 
 // ============= ⚡️  =============
 const PORT = process.env.PORT || 5000
