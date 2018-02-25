@@ -22,7 +22,7 @@ const taskData = {
         return task.text = _text
     },
 
-    delet(_id) {
+    delete(_id) {
 
         const index = tasks.findIndex(task => task.id === _id)
 
