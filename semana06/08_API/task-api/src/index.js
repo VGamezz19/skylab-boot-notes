@@ -6,7 +6,6 @@ const taskRoutes = require('./routes/taskRoutes')
 
 const app = express()
 
-
 app.use('/api', taskRoutes)
 
 // ============= ⚡️  =============

@@ -3,11 +3,11 @@ const taskData = {
     list() { return tasks },
 
     create(text, id = (new Date()).getTime(), done = false) {
-        return taskData.push({ id, text,done })
+        return tasks.push({ id, text,done })
     },
 
     retrieve(_id) {
-        const task = tasks.find(task => task.id === _id)
+        const task = tasks.find(task => task.id === parseInt(_id))
 
         if (task) return task
 
@@ -24,11 +24,11 @@ const taskData = {
 
     delete(_id) {
 
-        const index = tasks.findIndex(task => task.id === _id)
+        const index = tasks.findIndex(task => task.id === parseInt(_id))
 
         if (index < 0) throw Error('Task does not exist.')
 
-        return task.splice(index, 1)
+        return tasks.splice(index, 1)
 
     }
 }

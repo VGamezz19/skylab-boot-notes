@@ -30,18 +30,18 @@ router.patch('/tasks/:id', jsonBodyParser, (req, res) => {
     try {
         taskLogic.update(id, text)
 
-        res.json(success('Task Updated.'))
+        res.json(success('Task Updated succeeded.'))
     } catch (err) {
         res.json(fail('Task Updated failed.', err.message))
     }
 
 })
 
-router.put('/tasks:id', (req, res) =>{
+router.put('/tasks/:id', (req, res) =>{
     const { params: { id } } = req
 
     try {
-        userLogic.update(id)
+        taskLogic.update(id)
 
         res.json(success('Task Update to Done succeeded'))
 
@@ -58,7 +58,7 @@ router.delete('/tasks/:id', (req, res) => {
 
         res.json(success('Task Delete succeeded.'))
     } catch (err) {
-        res.json(fail('Task Delete.failed.', err.message))
+        res.json(fail('Task Delete failed.', err.message))
     }
 }) 
 

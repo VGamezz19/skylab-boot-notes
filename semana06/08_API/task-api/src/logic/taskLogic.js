@@ -33,20 +33,18 @@ const taskLogic = {
 
     removeAll() {
 
-        const tasks = taskData.list()
-        let i = 0
-        while (i < tasks.length) {
-            taskData.delete(tasks[i])
-            i++
-        }
+        const tasks = taskData.list() // WARN --> Bug HERE!!
+        const len = tasks.length
 
-        return taskData.list()
+        for (let i = 0; i < len; i++) {
+            taskData.delete(tasks[i].id)
+        }
 
     },
 
     update(_id, text) {
 
-        taskLogic.update(_id,text)
+        taskData.update(_id, text)
 
     }
 }

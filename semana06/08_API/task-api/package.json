@@ -6,7 +6,7 @@
   "scripts": {
     "start":"node .",
     "watch":"nodemon .",
-    "debug":"nodemon .",
+    "debug":"devtool .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Victor Gamez <victor.gamez1596@gmail.com>",
