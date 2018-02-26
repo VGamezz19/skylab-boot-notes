@@ -5,4 +5,4 @@ jenkins
 
 code coverage
 
-logger
+logger --> yarn add logger
