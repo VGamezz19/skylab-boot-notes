@@ -24,6 +24,10 @@ const taskData = {
 
     delete(_id) {
 
+        if(!_id){
+            return tasks.splice(0, tasks.length)
+        } 
+
         const index = tasks.findIndex(task => task.id === parseInt(_id))
 
         if (index < 0) throw Error('Task does not exist.')
