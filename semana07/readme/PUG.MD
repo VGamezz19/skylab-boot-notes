@@ -14,4 +14,19 @@ app.set('view engine', 'pug')
 
 especificando a app que va a trabajar con `views` y que tendra que renderizar formato `pug`
 
--- Mirar [documentacion](https://pugjs.org/api/getting-started.html) completa
+-- Mirar [documentacion](https://pugjs.org/api/getting-started.html)
+
+## Variables
+
+Podemos enviar variables a la template pug por `Express` de esta forma:
+
+```js
+//index.js
+app.get('/', (req, res)=> {
+    res.render('index', {test : 'Hello World'}
+})
+```
+
+y directamente podremos acceder a la palabra `test` que contendra `Hello World`
+
+Para más informacion, mirar la documentacion oficial, esta muy completa.
