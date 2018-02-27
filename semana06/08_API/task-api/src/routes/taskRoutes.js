@@ -14,6 +14,8 @@ router.get('/tasks/todo', (req, res) => res.json(success('Task for todo listing 
 
 router.get('/tasks/done', (req, res) => res.json(success('Tasks done listing succeeded.', taskLogic.listDone())))
 
+router.get('/tasks/all', (req, res) => res.json(success('listing all tasks succeeded.', taskLogic.listAll())))
+
 router.post('/tasks', jsonBodyParser, (req, res) => {
     const { text } = req.body
 

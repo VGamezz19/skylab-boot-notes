@@ -31,6 +31,10 @@ const taskLogic = {
 
     },
 
+    listAll() {
+        return taskData.list()
+    },
+
     removeAll() {
 
         taskData.delete()

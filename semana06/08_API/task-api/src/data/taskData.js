@@ -7,7 +7,7 @@ const taskData = {
     },
 
     retrieve(_id) {
-        const task = tasks.find(task => task.id === parseInt(_id))
+        const task = tasks.find(task => task.id == _id)
 
         if (task) return task
 
@@ -28,7 +28,7 @@ const taskData = {
             return tasks.splice(0, tasks.length)
         } 
 
-        const index = tasks.findIndex(task => task.id === parseInt(_id))
+        const index = tasks.findIndex(task => task.id == _id)
 
         if (index < 0) throw Error('Task does not exist.')
 
