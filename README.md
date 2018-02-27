@@ -14,7 +14,7 @@
 
 ### 29-01-2018
 
-## [Semana04](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana04) - React - Babel - ReactWithApiRes - ReactRouting - ReactCLI
+## [Semana04](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana04) - React - Babel - ReactWithApiRes - ReactRouting - ReactCLI - JEST
 
 ### 05-02-2018
 
@@ -26,6 +26,6 @@
 
 ### 19-02-2018
 
-## [Semana07](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana07) 
+## [Semana07](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana07) - Pug - Jenkins - CodeCoverage
 
 ### 26-02-2018
