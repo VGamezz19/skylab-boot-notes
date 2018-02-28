@@ -7,6 +7,7 @@ Mocha is a feature-rich JavaScript test framework running on Node.js
 -- mirar [documentacion](https://mochajs.org/) completa
 
 Por convenio, mocha trabaja en la carpeta `./test` a nivel de `./src` y dentro definimos nuestros test.
+Si queremos efectuar los tests en otra carpeta, tendremos que ejecutar --> `mocha nombre-de-la-carpeta`
 
 Test de ejemplo:
 
@@ -55,3 +56,69 @@ Podemos añadirle una descripcion de esta forma:
     // beforeEach:some description
     });
 ```
+
+## Assert
+
+Assert es un [modulo](https://nodejs.org/api/assert.html) de node que nos permite hacer afirmaciones. Como por ejemplo:
+
+- Existe el contenido de la variable?
+
+```js
+ let _tasks = true
+ assert(_tasks, 'tasks should be created')
+```
+
+Y muchos más que estan incluidos en la documentacion de Node.
+
+
+## CodeCoverage - Nyc
+
+El termino de `codeCoverage` es muy importante a la hora de lanzar codigo a Prdoccion. Refleja la cantidad de codigo que se ha testeado. Y en una empresa se tendra muy en cuenta a la hora de lanzar una aplicacion, que como minimo este testeado más del 80% de nestro codigo.
+Para poder implementar `codeCoverage` en `Mocha`, existe una herramienta llamada [nyc](https://istanbul.js.org/docs/tutorials/mocha/)
+
+`npm i --save-dev nyc`
+
+y despues especificamos en nuestro `package.json`
+
+```json
+  "scripts": {
+    "demo": "devtool demos --watch",
+    "test": "mocha tests",
+    "coverage": "nyc mocha tests"
+  },
+```
+
+El ejecutar el comando `yarnd coverage`
+
+```sh
+$ nyc mocha tests
+
+  Task Data
+    ✓ should create a task
+    ✓ should list tasks
+    ✓ should retrieve task
+    ✓ should update task
+    ✓ should delete a task
+    ✓ should filter tasks
+
+
+  6 passing (9ms)
+
+-------------|----------|----------|----------|----------|----------------|
+File         |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+-------------|----------|----------|----------|----------|----------------|
+All files    |    89.55 |     82.5 |      100 |      100 |                |
+ Task.js     |      100 |      100 |      100 |      100 |                |
+ TaskData.js |    87.72 |     82.5 |      100 |      100 |... ,46,108,130 |
+-------------|----------|----------|----------|----------|----------------|
+```
+
+Primero efectuara el test, y despues nos mostrara un esquema del `codeCoverage`
+
+🚨
+
+Para poder mostrar el `codeCoverage` en HTML, tendremos que efectuar el commando:
+
+`nyc --reporter=html --reporter=text mocha tests`
+
+![IMG](https://github.com/VGamezz19/skylab-boot-notes/blob/master/semana07/public/coverage.png)
