@@ -4,6 +4,8 @@
 
 Template rendering for Node!
 
-## [MOCHA](https://github.com/VGamezz19/skylab-curso/tree/master/semana07/readme/MOCHA.MD))
+## [MOCHA-codeCoverage](https://github.com/VGamezz19/skylab-curso/tree/master/semana07/readme/MOCHA.MD))
 
-Es muy importante implementar en cualquier entorno la metodologias TDD. en Node podemos usar `Mucha` o `Jasmine`
+Mocha es otro de las herramientas de `JS` para poder testear nuestro codigo, se usa mucho para testear `Node` ya que usar `assert` uno de los componentes propios de node.
+
+Tambien se menciona el termino `codeCoverage`, que como bien se indica en el nombre, es la covertura de codigo que esta efectuando nuestro test.
