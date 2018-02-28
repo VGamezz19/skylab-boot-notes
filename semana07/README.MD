@@ -13,3 +13,5 @@ Tambien se menciona el termino `codeCoverage`, que como bien se indica en el nom
 ## [JSDoc](https://github.com/VGamezz19/skylab-curso/tree/master/semana07/readme/JSDOC.MD)
 
 JSDoc es el estandar para documentar nuestro codigo en JS. Comentar nuestro codigo, es sumamente importante en una empresa, para que otra gente peda interpretarlo. **codigo limpio**
+
+cookies --> expres.cookies.
