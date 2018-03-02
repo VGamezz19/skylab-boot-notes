@@ -5,20 +5,21 @@ const { MongoClient } = require('mongodb')
 
 const app = express()
 
+app.set('view engine', 'pug')
+
 MongoClient.connect('mongodb://localhost:27017', (err, conn) => {
     if (err) throw err
 
     const db = conn.db('bootcamp')
 
     app.get('/', (req, res) => {
-        const query = req.query.q || req.query.query || ''
-    
-        const regex = new RegExp(query, 'i')
 
-        db.collection('user').find({ name: regex, email: regex}).toArray((err, data) => {
+        db.collection('users').find().toArray((err, data) => {
             if (err) throw err
+           // console.log({data})
+            res.render("index", {data})
 
-            res.json(data)
+            //res.json(data)
         })
     })
 

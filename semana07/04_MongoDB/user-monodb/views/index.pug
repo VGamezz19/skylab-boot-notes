@@ -5,6 +5,14 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
     body
+        h1 User App
+            ul
+                each user in data
+                    li
+                        from(action=`user/${user.id}`, method="get")
+                            | #{user.name}
+                            |
+                            input(type="submit", value="😭")
         //- h1 Task App
         //- form(action="/tasks", method="post")
         //-     input(type="text", name="text")
