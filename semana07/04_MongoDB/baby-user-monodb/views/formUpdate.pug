@@ -1,0 +1,6 @@
+form(action=`/user/updated`, method='post')
+    input(type="text", value= `${user.name}`, name='name')
+    input(type="text", value= `${user.email}`, name='email')
+    input(type="text", value= `${user.surname}`, name='surname')
+    input(type="text", value= `${user.githubUsername}`, name='githubUsername')
+    input(type='submit', value = "UpdateUser")

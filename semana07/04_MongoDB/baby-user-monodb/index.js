@@ -3,8 +3,6 @@ require('dotenv').config()
 const express = require('express')
 const { MongoClient, ObjectID } = require('mongodb')
 
-//const { ObjectID } = require('mongodb')
-
 const bodyParser = require('body-parser')
 
 const app = express()
@@ -18,10 +16,12 @@ MongoClient.connect('mongodb://localhost:27017', (err, conn) => {
 
     const db = conn.db('bootcamp')
 
-    app.get('/', (req, res) => {
+    app.get('/:id?', (req, res) => {
+        const {params: {id}} = req
+
         db.collection('users').find().toArray((err, data) => {
             if (err) throw err
-            res.render("index", {data})
+            res.render("index", {data, id})
         })
     })
 
@@ -43,10 +43,28 @@ MongoClient.connect('mongodb://localhost:27017', (err, conn) => {
         const {params: {id}} = req
 
         db.collection('users').remove({"_id": ObjectID(id)}, (err, data) => {
-
+        
             res.redirect('/')
 
         })
+    })
+
+    app.get('/user/:id/edit', (req, res) => {
+        const {params: {id}} = req
+
+        res.redirect('/')
+    })
+
+    app.post('/user/updated', formBodyParser, (req,res) => {
+        const {body: {name, email, surname, githubUsername }, param: {id}} = req
+
+        db.collection('users').updateOne({"_id": ObjectID(id)},{$set:{name, email, surname, githubUsername }}, (err, data) => {
+            if (err) throw err
+            
+            res.redirect('/')
+
+        })
+
     })
 
     const port = process.env.PORT

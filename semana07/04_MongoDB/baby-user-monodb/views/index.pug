@@ -5,7 +5,7 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Document
     body
-        
+
         h1 User App
             form(action=`/user`, method='post')
                 input(type="text", placeholder= 'name', name='name')
@@ -17,9 +17,7 @@ html(lang="en")
             ul
                 each user in data
                     li
-                        form(action=`/user/${user._id}/delete`, method="get")
-                                | #{user.name}
-                                | #{user.surname}
-                                | #{user.email}
-                                |
-                                a(href=`/user/${user._id}/delete`) Delete 💥
+                        if user._id == id
+                            include formUpdate   
+                        else
+                            include listUser
