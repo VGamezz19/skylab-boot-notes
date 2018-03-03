@@ -26,6 +26,6 @@
 
 ### 19-02-2018
 
-## [Semana07](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana07) - Pug - Mocha - CodeCoverage - JSDoc - MongoDB
+## [Semana07](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana07) - Pug - Mocha - CodeCoverage - JSDoc - MongoDB - CodigoEjemplo
 
 ### 26-02-2018
