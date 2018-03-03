@@ -141,3 +141,37 @@ En todos los metodos, generamos un nuevo `Task` con el **metodo statico** `from(
 
 Interesante Filter, segun los parametros que le entren al metodo, el filtrado sera más extenso o no.
 Si no ponemos ningun parametro, simplemente todos los `matches` seran `true` y sacara todos los registros.
+
+## Componetizar
+
+Como componetizar los componentes realizados, para poderse usar en otras capas?
+Simplemente tendremos que reservar el fichero `index.js` para escribir la exportacion de los modulos:
+
+```js
+const Task = require('./Task')
+const TaskData = require('./TaskData')
+
+module.exports = {Task, TaskData}
+```
+
+despues, en otra capa distinta o proyecto, realizaremos:
+
+`yarn add direccion-del-modulo-que-queremos-importar`
+
+Despues, veremos que en nuestro `package.json` se ha añadido algo parecido a esto:
+
+```json
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.2",
+    "task-data": "file:../task-data",
+    "task-logic": "file:../task-logic"
+  }
+```
+
+Podremos requerirlo de esta forma:
+
+```js
+const {TaskData, Task} = require('task-data')
+```
