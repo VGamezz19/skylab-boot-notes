@@ -20,4 +20,4 @@ MongoDB es una BBDD NoSQL que trabaja en formato `json`.
 
 ## [Componetizando](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana07/03_Component_API_MOCHA_JSDOC)
 
-Codigo senior de como componetizar un proyecto.
+Codigo senior de como componetizar un proyecto con JSDoc y TDD Mocha.
