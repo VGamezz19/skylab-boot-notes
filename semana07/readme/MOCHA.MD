@@ -70,6 +70,36 @@ Assert es un [modulo](https://nodejs.org/api/assert.html) de node que nos permit
 
 Y muchos más que estan incluidos en la documentacion de Node.
 
+## Example
+
+```js
+describe('Task Logic', () => {
+    let tasks
+    let taskData
+    let taskLogic
+
+    beforeEach(() => {
+        taskData = new TaskData(tasks = [])
+        taskLogic = new TaskLogic(taskData)
+    })
+
+    it('should create a task', () => {
+        const title = 'title', description = 'description'
+
+        const id = taskLogic.create(title, description)
+
+        assert(tasks.length > 0, 'task should be created')
+
+        const task = tasks[0]
+
+        assert(task instanceof Task, 'task should be instance of Task')
+        assert.equal(task.id, id, 'task id should match')
+        assert.equal(task.title, title, 'task title should match')
+        assert.equal(task.description, description, 'task description should match')
+        assert.equal(task.status, Task.TODO, 'task status should match')
+    })
+```
+
 ## CodeCoverage - Nyc
 
 El termino de `codeCoverage` es muy importante a la hora de lanzar codigo a Prdoccion. Refleja la cantidad de codigo que se ha testeado. Y en una empresa se tendra muy en cuenta a la hora de lanzar una aplicacion, que como minimo este testeado más del 80% de nestro codigo.
