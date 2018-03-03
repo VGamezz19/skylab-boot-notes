@@ -1,4 +1,4 @@
-const Task = require('../../task-data/src/Task')
+const {Task} = require('task-data')
 
 /** 
  * Task Logic (business object)

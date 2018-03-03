@@ -31,8 +31,4 @@ Task.DOING = 1
 Task.REVIEW = 2
 Task.DONE = 3
 
-// Task.from = function({id, title, description, status}) {
-//     return new Task(id, title, description, status)
-// }
-
 module.exports = Task
