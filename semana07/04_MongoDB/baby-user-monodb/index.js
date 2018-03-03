@@ -30,9 +30,9 @@ MongoClient.connect('mongodb://localhost:27017', (err, conn) => {
     })
 
     app.post('/user/', formBodyParser, (req, res) => {
-        const {body: {name, email, surname, githubUsername }} = req
+        const {body: {name, email, surname, password }} = req
 
-        db.collection('users').insert({name, email, surname, githubUsername}, (err, data) => {
+        db.collection('users').insert({name, email, surname, password}, (err, data) => {
             if (err) throw error
 
             res.redirect('/')
@@ -56,9 +56,9 @@ MongoClient.connect('mongodb://localhost:27017', (err, conn) => {
     })
 
     app.post('/user/updated', formBodyParser, (req,res) => {
-        const {body: {name, email, surname, githubUsername }, param: {id}} = req
+        const {body: {name, email, surname, password }, param: {id}} = req
 
-        db.collection('users').updateOne({"_id": ObjectID(id)},{$set:{name, email, surname, githubUsername }}, (err, data) => {
+        db.collection('users').updateOne({"_id": ObjectID(id)},{$set:{name, email, surname, password }}, (err, data) => {
             if (err) throw err
             
             res.redirect('/')
