@@ -18,6 +18,6 @@ JSDoc es el estandar para documentar nuestro codigo en JS. Comentar nuestro codi
 
 MongoDB es una BBDD NoSQL que trabaja en formato `json`.
 
-## [Componetizando](https://github.com/VGamezz19/skylab-curso/tree/master/semana07/readme/MONGO.MD)
+## [Componetizando](https://github.com/VGamezz19/skylab-boot-notes/tree/master/semana07/03_Component_API_MOCHA_JSDOC)
 
 Codigo senior de como componetizar un proyecto.
