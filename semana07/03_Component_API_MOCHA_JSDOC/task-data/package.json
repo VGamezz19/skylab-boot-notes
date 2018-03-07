@@ -7,7 +7,7 @@
     "demo": "devtool demos --watch",
     "test": "mocha tests",
     "_coverage": "nyc --reporter=html --reporter=text mocha tests",
-    "coverage": "nyc mocha test"
+    "coverage": "nyc mocha tests"
   },
   "keywords": [],
   "author": "",
