@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-import api from 'users-api-client'
-
-api.protocol = 'http'
-api.host = 'localhost'
-api.port = '5000'
+import api from './api/miApi'
+import Form from './components/Form'
 
 class App extends Component {
   constructor() {
@@ -26,13 +22,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Form inputs={['name', 'surname', 'email', 'username', 'password']} />
         <ul>
           {this.state.data.map(user => <li key={user.id}>{`${user.name} ${user.surname}`}</li>)}
         </ul>
