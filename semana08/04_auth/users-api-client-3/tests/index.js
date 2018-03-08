@@ -1,17 +1,21 @@
 require('dotenv').config()
 
 const api = require('../src/index')
+
 const assert = require('assert')
 
 const mongoose = require('mongoose')
 
-const {
-    API_PROTOCOL,
-    API_HOST,
-    API_PORT
-} = process.env
+const { API_PROTOCOL, API_HOST, API_PORT, JWT_SECRET: secret, JWT_EXP: expiration } = process.env
+
+const expiresIn = parseInt(expiration)
+
+const jwt = require('jsonwebtoken')
+
+const token =  jwt.sign({ username:'userTest' }, secret, { expiresIn })
 
 let index = 0
+
 let name, surname, email, username, password
 
 api.protocol = API_PROTOCOL
@@ -69,14 +73,14 @@ describe('API', () => {
 
         it('should list', done => {
 
-            api.create(name, surname, email, username, password)
+            api.create(name, surname, email, username, password, token)
                 .then(res => {
 
                     assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
 
                     assert(res.data && res.data.id, 'should return data id')
 
-                    return api.list()
+                    return api.list(token)
 
                 })
                 .then(res => {
@@ -92,7 +96,7 @@ describe('API', () => {
         })
 
         it('should create', done => {
-            api.create(name, surname, email, username, password)
+            api.create(name, surname, email, username, password, token)
                 .then(res => {
 
                     assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
@@ -106,7 +110,7 @@ describe('API', () => {
 
         it('should retrieve', done => {
             let id
-            api.create(name, surname, email, username, password)
+            api.create(name, surname, email, username, password, token)
                 .then(res => {
 
                     assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
@@ -115,7 +119,7 @@ describe('API', () => {
 
                     id = res.data.id
 
-                    return api.retrieve(id)
+                    return api.retrieve(id, token)
                 })
                 .then(res => {
 
@@ -142,7 +146,7 @@ describe('API', () => {
             let newPassword = "paco",
                 newUsername = "paquito",
                 id
-            api.create(name, surname, email, username, password)
+            api.create(name, surname, email, username, password, token)
                 .then(res => {
 
                     assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
@@ -151,13 +155,13 @@ describe('API', () => {
 
                     id = res.data.id
 
-                    return api.update(id, name, surname, email, username, password, newUsername, newPassword)
+                    return api.update(id, name, surname, email, username, password, newUsername, newPassword, token)
                 })
                 .then(res => {
 
                     assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
 
-                    return api.retrieve(id)
+                    return api.retrieve(id, token)
                 })
                 .then(res => {
 
@@ -182,7 +186,7 @@ describe('API', () => {
 
         it('should delete', done => {
 
-            api.create(name, surname, email, username, password)
+            api.create(name, surname, email, username, password, token)
                 .then(res => {
 
                     assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
@@ -191,14 +195,14 @@ describe('API', () => {
 
                     id = res.data.id
 
-                    return api.remove(id, username, password)
+                    return api.remove(id, username, password, token)
                 })
                 .then(res => {
 
                     assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
 
 
-                    return api.retrieve(id)
+                    return api.retrieve(id, token)
                 })
                 .then(res => {
 
