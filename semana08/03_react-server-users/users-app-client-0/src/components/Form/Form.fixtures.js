@@ -1,14 +1,19 @@
 import Form from './Form'
 
 
-export default {
+export default [{
   component: Form,
   props: {
-    inputs: ['text', 'name', 'password'],
-    onHandlerSubmit: ()=> console.log
-    // name: 'text',
-    // className: 'somthing',
-    // handlerChangeInput: function(value, name) {console.log(value, name)}
-    //onChange: value => console.log(`Select: ${value}`)
+    inputs: ['name', 'surname', 'email', 'username', 'password'],
+    onHandlerSubmit: () => console.log
   }
-};
+}, {
+  component: Form,
+  props: {
+    inputs: ['name', 'surname', 'email', 'username', 'password'],
+    onHandlerSubmit: () => console.log
+  },
+  state: {
+    name: "hola"
+  }
+}];
