@@ -23,9 +23,16 @@ class Form extends Component {
     render() {
         return (
             <form onSubmit={(e) => { e.preventDefault(); this.onSubmitForm(); }}>
-                {this.props.inputs.map(input => {
-                    return <Input type={input !== 'email' || input !== 'password' ? 'text' : input} name={input} className='something' handlerChangeInput={this.handlerChangeInput} />
-                })}
+                {
+                    this.props.inputs.map((nameInput, index) => {
+                        return <Input
+                            type={nameInput !== 'email' || nameInput !== 'password' ? 'text' : nameInput}
+                            name={nameInput}
+                            className='something'
+                            key={index}
+                            handlerChangeInput={this.handlerChangeInput} />
+                    })
+                }
                 <Input type="submit" name='submit' value="Create New User! " />
             </form>
         )

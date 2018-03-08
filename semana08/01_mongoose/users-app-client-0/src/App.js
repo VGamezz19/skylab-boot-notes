@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import api from './api/miApi'
 import Form from './components/Form'
@@ -11,20 +11,30 @@ class App extends Component {
     this.state = { data: [] }
   }
 
-  componentDidMount() {
-    api.list()
+  list() {
+    return api.list()
       .then(({ data }) => {
         this.setState({ data })
       })
+  }
+
+  componentDidMount() {
+    this.list()
       .catch(console.error)
   }
 
-  create(user) {
+  create = (user) => {
     const { name, surname, email, username, password } = user
 
     api.create(name, surname, email, username, password)
-      .then(({ data }) => {
-        this.setState({ data })
+      .then((res) => {
+
+        if (res.status === 'OK') {
+          return this.list()
+        }
+
+        return console.error(res.error)
+
       })
       .catch(console.error)
   }
