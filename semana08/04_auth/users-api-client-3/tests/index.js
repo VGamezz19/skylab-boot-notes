@@ -12,7 +12,7 @@ const expiresIn = parseInt(expiration)
 
 const jwt = require('jsonwebtoken')
 
-const token =  jwt.sign({ username:'userTest' }, secret, { expiresIn })
+const token = jwt.sign({ username: 'userTest' }, secret, { expiresIn })
 
 let index = 0
 
@@ -22,7 +22,7 @@ api.protocol = API_PROTOCOL
 api.host = API_HOST
 api.port = API_PORT
 
-describe('API', () => {
+describe('API-client', () => {
 
     before(function (done) {
 
@@ -30,13 +30,32 @@ describe('API', () => {
 
         mongoose.connection.once('connected', () => {
             mongoose.connection.db.collection('users').drop(err => {
-                if (err) done(err)
+
+                if (err) console.error(`Some error when try to connect BBDD ${err}`)
+
                 done()
             });
         });
     })
 
-    describe('Succes CASES', () => {
+
+    describe('Enviroment-tdd', () => {
+
+        it('mandatory arguments in this API', () => {
+
+            assert(require('mongoose'), 'you need installed mongoose, please add it with yarn add --dev jsonwebtoken')
+
+            assert(require('jsonwebtoken'), 'you need installed jsonwebtoken, please add it with yarn add --dev jsonwebtoken')
+
+            assert(secret, `secret should exist`)
+
+            assert(expiration, `expiration should exist`)
+
+            assert(token, 'token should exist')
+        })
+    })
+
+    describe('Succes Cases', () => {
         beforeEach(() => {
             index++;
 
@@ -71,12 +90,38 @@ describe('API', () => {
             assert.equal(typeof (api), 'object', 'should instace of as Object')
         })
 
+        it('should login', done => {
+            api.create(name, surname, email, username, password, token)
+            .then(res => {
+
+                assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
+
+                assert(res.data && res.data.id, 'should return data id')
+
+                return api.login(username, password,token)
+
+            })
+            .then(res => {
+
+                assert.equal(res.status, 'OK', `results should be OK, but got error: ${res.error}`)
+
+                assert(res.data.token.length > 100,`should more than 100 caracters`)
+
+                assert.notEqual(res.data.token, token, 'should return new token')
+
+                assert(jwt.verify(res.data.token, secret), 'should verify token')
+
+                done()
+            })
+            .catch(done)
+        })
+
         it('should list', done => {
 
             api.create(name, surname, email, username, password, token)
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     assert(res.data && res.data.id, 'should return data id')
 
@@ -85,7 +130,7 @@ describe('API', () => {
                 })
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK, but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK, but got error: ${res.error}`)
 
                     assert(res.data && res.data.length > 0, `should return data array`)
 
@@ -99,7 +144,7 @@ describe('API', () => {
             api.create(name, surname, email, username, password, token)
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     assert(res.data && res.data.id, 'should return data id')
 
@@ -113,7 +158,7 @@ describe('API', () => {
             api.create(name, surname, email, username, password, token)
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     assert(res.data && res.data.id, 'should return data id')
 
@@ -123,7 +168,7 @@ describe('API', () => {
                 })
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     assert.equal(res.data.name, name, `${res.data.name} should be same as name --> ${name}`)
 
@@ -149,7 +194,7 @@ describe('API', () => {
             api.create(name, surname, email, username, password, token)
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     assert(res.data && res.data.id, 'should return data id')
 
@@ -159,13 +204,13 @@ describe('API', () => {
                 })
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     return api.retrieve(id, token)
                 })
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     assert.equal(res.data.name, name, `${res.data.name} should be same as name --> ${name}`)
 
@@ -189,7 +234,7 @@ describe('API', () => {
             api.create(name, surname, email, username, password, token)
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
                     assert(res.data && res.data.id, 'should return data id')
 
@@ -199,7 +244,7 @@ describe('API', () => {
                 })
                 .then(res => {
 
-                    assert.equal(res.status, 'OK', `results should be OK , but got error ${res.error}`)
+                    assert.equal(res.status, 'OK', `results should be OK , but got error: ${res.error}`)
 
 
                     return api.retrieve(id, token)
@@ -215,6 +260,7 @@ describe('API', () => {
     })
 
     after(() => {
+
         mongoose.disconnect()
     })
 
