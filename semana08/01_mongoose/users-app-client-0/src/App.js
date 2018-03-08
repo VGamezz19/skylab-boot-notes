@@ -19,10 +19,20 @@ class App extends Component {
       .catch(console.error)
   }
 
+  create(user) {
+    const { name, surname, email, username, password } = user
+
+    api.create(name, surname, email, username, password)
+      .then(({ data }) => {
+        this.setState({ data })
+      })
+      .catch(console.error)
+  }
+
   render() {
     return (
       <div className="App">
-        <Form inputs={['name', 'surname', 'email', 'username', 'password']} />
+        <Form inputs={['name', 'surname', 'email', 'username', 'password']} onHandlerSubmit={this.create} />
         <ul>
           {this.state.data.map(user => <li key={user.id}>{`${user.name} ${user.surname}`}</li>)}
         </ul>

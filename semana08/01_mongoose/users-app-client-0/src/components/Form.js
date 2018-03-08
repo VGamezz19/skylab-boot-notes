@@ -15,7 +15,7 @@ class Form extends Component {
     }
 
     onSubmitForm = () => {
-        console.log(`submit`)
+        this.props.onHandlerSubmit(this.state)
     }
 
     handlerChangeInput = (value, name) => this.setState({ [name]: value })
