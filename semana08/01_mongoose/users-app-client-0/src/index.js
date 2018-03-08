@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-// import * as dot from 'dotenv';
-// dot.config()
+import * as dot from 'dotenv';
+dot.config()
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
