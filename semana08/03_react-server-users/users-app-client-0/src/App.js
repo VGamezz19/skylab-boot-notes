@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import './App.css';
 import api from './api/miApi'
 import Form from './components/Form/Form'
+import Editing from './components/Editing/Editing'
+const ReactMarkdown = require('react-markdown')
 
 class App extends Component {
   constructor() {
@@ -43,6 +45,8 @@ class App extends Component {
     return (
       <div className="App">
         <Form inputs={['name', 'surname', 'email', 'username', 'password']} onHandlerSubmit={this.create} />
+
+        <Editing />
         <ul>
           {this.state.data.map(user => <li key={user.id}>{`${user.name} ${user.surname}`}</li>)}
         </ul>
